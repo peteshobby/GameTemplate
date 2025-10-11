@@ -1,0 +1,12 @@
+OUTFILE      = template.aqx
+INC_DIRS    += aqplus common  banked
+SRC_DIRS    += aqplus common  banked
+BUILD_DIR   = build_aqplus
+CFLAGS      += -DVERA_COMMON -DAQPLUS 
+
+FILES_TO_COPY += 
+.DEFAULT_GOAL := all
+
+
+include $(AQPLUS_SDK)/c/lib/Makefile.common
+

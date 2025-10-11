@@ -1,0 +1,17 @@
+CC=cl65
+SRC_DIRS    += cx16 common banked
+SRC    += $(wildcard $(addsuffix /*.c, $(SRC_DIRS)))
+HDR    += $(wildcard $(addsuffix /*.h, $(SRC_DIRS)))
+LIB_DIRS	+= cx16/lib
+OUTNAME = TEMPLATE
+
+build_cx16/$(OUTNAME).PRG: $(SRC) $(HDR)
+	@mkdir -p build_cx16
+	$(CC) -O -o build_cx16/$(OUTNAME).PRG -DMUSIC -DVERA_COMMON -DCX16 -t cx16 -I cx16 -I common -L $(LIB_DIRS) $(SRC) 
+	
+clean:
+	@rm -rf build_cx16
+
+
+run_emu: build_cx16/$(OUTNAME).PRG
+	C:\x16emu_win64-r48/x16emu.exe -joy1 -scale 2 -run -prg build_cx16/$(OUTNAME).PRG

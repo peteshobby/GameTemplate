@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "name": "Agon",
+      "includePath": [
+        "${workspaceFolder}/agon/**",
+        "${workspaceFolder}/common/**",
+        "C:\\agdev\\include"
+      ],
+      "cStandard": "c11"
+     },
+     {
+      "name": "Aquarius+",
+      "includePath": [
+        "${env:AQPLUS_SDK}/c/include",
+        "${workspaceFolder}/aqplus/**",
+        "${workspaceFolder}/common/**",
+        "C:\\Program Files\\SDCC\\include"
+      ],
+      "cStandard": "c17"
+    },
+    {
+      "name": "cx16",
+      "includePath": [
+        "C:\\cc65\\include",
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/common/**",
+        "${workspaceFolder}/cx16/**"
+      ],
+      "cStandard": "c99"
+    },
+    {
+      "name": "SpecNext",
+      "includePath": [
+        "C:\\SDKs\\z88dk\\include",
+        "${workspaceFolder}/common/**",
+        "${workspaceFolder}/next/**",
+        "${workspaceFolder}/**"
+      ],
+      "cStandard": "c11"
+    }
+  ],
+  "version": 4
+}

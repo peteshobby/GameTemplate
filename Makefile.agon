@@ -1,0 +1,42 @@
+# ----------------------------
+# Makefile Options
+# ----------------------------
+
+NAME = template
+DESCRIPTION = "Game Template"
+COMPRESSED = NO
+LDHAS_ARG_PROCESSING = 0
+LTO = yes
+SRCDIRS = common agon banked
+SRCDIR = common 
+EXTRA_USERHEADERS = agon 
+
+BSSHEAP_LOW = 060000
+BSSHEAP_HIGH = 09FFFF
+
+CFLAGS = -Wall -Wextra -Wmain-return-type -Oz -DAGON
+CXXFLAGS = -Wall -Wextra -Wmain-return-type -Oz -DAGON
+
+EMULATOR_DIR=c:\fab-agon-emulator
+EMULATOR_BIN=fab-agon-emulator.exe
+EMULATOR_FLAGS=--scale integer
+
+BINDIR	= build_agon
+OBJDIR	= build_agon
+# ----------------------------
+include $(shell cedev-config --makefile)
+
+
+	
+
+autoexec: all
+	echo SET KEYBOARD 1 > $(BINDIR)/autoexec.txt
+	echo cd $(NAME) >> $(BINDIR)/autoexec.txt
+	echo load $(TARGETBIN) >> $(BINDIR)/autoexec.txt
+	echo run >> $(BINDIR)/autoexec.txt
+
+run_emu: autoexec
+	if not exist $(EMULATOR_DIR)\sdcard\$(NAME)  mkdir $(EMULATOR_DIR)\sdcard\$(NAME)
+	cp $(BINDIR)/$(TARGETBIN) $(EMULATOR_DIR)/sdcard/$(NAME)
+	cp $(BINDIR)/autoexec.txt $(EMULATOR_DIR)/sdcard
+	cd $(EMULATOR_DIR) && $(EMULATOR_DIR)/$(EMULATOR_BIN) $(EMULATOR_FLAGS)
