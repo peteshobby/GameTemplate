@@ -14,10 +14,9 @@ This is a template project for creating a game to run on the following neo-retro
 ```mermaid
 graph TD;
     A(Initialization)-->B[Splash Screen];
-    B-->C[Program Loop];
-    C-->D[Attract Screen];
-    D-->E[Game Loop];
-    E-->C;
+    B-->C[Attract Screen];
+    C-->D[Game Loop];
+    D-->C;
 ```
 
 ## Initialization
