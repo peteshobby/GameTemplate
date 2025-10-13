@@ -35,6 +35,7 @@
         "C:\\SDKs\\z88dk\\include",
         "${workspaceFolder}/common/**",
         "${workspaceFolder}/next/**",
+        "${workspaceFolder}/next_banked/**",
         "${workspaceFolder}/**"
       ],
       "cStandard": "c11"

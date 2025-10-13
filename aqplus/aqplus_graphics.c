@@ -31,10 +31,6 @@ void SetBorder(uint8_t color) {
 // and sets its background to the color given in the parameter.
 // It also sets the border to the same color.
 void ClearTextScreen(uint8_t backgroundColor) {
-	//     for (int i = 0; i < CHARRAM_SIZE; i++) {
-    //     textRam[i] = SPACE_CHAR;
-    //     colorRam[i] = backgroundColor;
-    // }
 	ClearScreen(COLOR(0, backgroundColor));
     SetBorder(backgroundColor);
 }

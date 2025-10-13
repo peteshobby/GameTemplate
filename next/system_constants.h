@@ -1,0 +1,18 @@
+#ifndef SYSTEM_CONSTANTS_H_
+#define SYSTEM_CONSTANTS_H_
+
+// Layer 2
+#define LAYER_2_START_BANK		9
+#define REG_LAYER_2_CONTROL		0x70
+#define LAYER_2_320x256x8		0x10
+#define LAYER_2_CLIP_HEIGHT		255
+#define LAYER_2_CLIP_WIDTH		159
+
+#define GLOBAL_TRANSPARENT		0xC3
+#define TRANSPARENT             0x00
+
+// Banking
+#define BANK_3_START_ADDRESS	0xC000
+#define BANK_LENGTH				0x4000
+
+#endif // SYSTEM_CONSTANTS_H_
