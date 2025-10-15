@@ -13,6 +13,10 @@ void ShowSplashScreen(void) {
 
 	for (color = MAX_COLOR; color != 0; --color) {
 		ClearTextScreen(color);
+// Need to clear twice for Agon double buffer
+		FrameSync();
+		ClearTextScreen(color);
+	
 		WaitForFrames(SPLASH_DELAY);
 	}
 }
