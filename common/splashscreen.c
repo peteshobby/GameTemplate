@@ -8,14 +8,11 @@
 #define MAX_COLOR		7
 #define SPLASH_DELAY	50
 
-
 void ShowSplashScreen(void) {
 	uint8_t color;
 
-
-		for (color = MAX_COLOR; color != 0; --color) {
-			ClearTextScreen(color);
-			WaitForFrames(SPLASH_DELAY);
-		}
-
+	for (color = MAX_COLOR; color != 0; --color) {
+		ClearTextScreen(color);
+		WaitForFrames(SPLASH_DELAY);
+	}
 }

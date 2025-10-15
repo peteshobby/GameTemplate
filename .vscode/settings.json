@@ -1,9 +1,5 @@
 {
     "files.associations": {
-        "aqplus.h": "c",
-        "video.h": "c",
-        "regs.h": "c",
-        "time.h": "c",
-        "zxn.h": "c"
+  
     }
 }
