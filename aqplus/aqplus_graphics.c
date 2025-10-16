@@ -50,5 +50,4 @@ void SetBorder(uint8_t color) {
 // It also sets the border to the same color.
 void ClearTextScreen(uint8_t backgroundColor) {
 	ClearScreen(COLOR(0, backgroundColor));
-
 }

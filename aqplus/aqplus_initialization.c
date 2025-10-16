@@ -1,5 +1,6 @@
 #include "initialization.h"
 #include "graphics.h"
+#include "aqplus_graphics.h"
 #include "system_constants.h"
 #include <aqplus.h>
 
@@ -23,7 +24,8 @@ void InitializeGraphics(void) {
 }
 
 void InitializeSystem() {
-//	EnableTurboMode();
+	EnableTurboMode();
 	InitializeGraphics();
 	ClearTextScreen(0);
+	SetBorder(0);
 }
