@@ -1,5 +1,5 @@
 #include "graphics.h"
-#include "system_constants.h"
+#include "constants.h"
 #include <cx16.h>
 
 // This function:

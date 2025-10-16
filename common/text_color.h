@@ -1,0 +1,24 @@
+#ifndef TEXT_COLOR_H_
+#define TEXT_COLOR_H_
+
+typedef enum {
+	TRANSPARENT,
+	ORANGE,
+	BROWN,
+	INDIGO,
+	PURPLE,
+	VIOLET,
+	CELADON,
+	GREY,
+	BLACK,
+	BLUE,
+	RED,
+	MAGENTA,
+	GREEN,
+	CYAN,
+	YELLOW,
+	WHITE,
+	MAX_TEXT_COLOR
+} TextColor;
+
+#endif // TEXT_COLOR_H_

@@ -7,17 +7,16 @@
 #define LAYER_1             0b00000010
 #define TEXT_LAYER          layer1
 #define TILE_LAYER          layer0
-#define AUTO_INCREMENT		0b10000
 
 // Colors
 #define COLOR(fore, back)	((back << 4) | fore) 
-#define	TRANSPARENT			0
+
+// Screen
+#define SCREEN_WIDTH		40
+#define SCREEN_HEIGHT		30
 
 // Tile map size
-#define TILE_HEIGHT		64
-#define TILE_WIDTH		64
-
-// Characters
-#define SPACE_CHAR          0x20
+#define MAX_TILE_ROW    64
+#define MAX_TILE_COLUMN 128 // Seems to be broken for text
 
 #endif // SYSTEM_CONSTANTS_H_

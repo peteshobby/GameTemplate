@@ -1,6 +1,7 @@
 #include <cx16.h>
 #include "system_constants.h"
 #include "graphics.h"
+#include "text_color.h"
 
 
 // This function:

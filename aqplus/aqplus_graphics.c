@@ -1,5 +1,5 @@
 #include "graphics.h"
-#include "system_constants.h"
+#include "constants.h"
 
 static uint8_t  *textRam     = (uint8_t *)  CHARRAM;
 static uint8_t  *colorRam    = (uint8_t *)  COLRRAM;
