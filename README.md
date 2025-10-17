@@ -21,7 +21,14 @@ graph TD;
 
 ## Initialization
 
-Each system is initialize to run as fast as possible and to provide roughly similar capabilities.
+Each system is initialize to run as fast as possible and to provide roughly
+similar capabilities. The initialiation code is split between one function per
+platform that calls several other platform specific functions. It is arranged
+this was to all for all the initailation code in those sub-functions to be
+moved to a bank to make more memory available to the main game code if
+necessary.
+
+## Configured Capabilities
 
 ### Agon Light
 
