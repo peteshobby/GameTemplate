@@ -20,7 +20,7 @@
  */
 
 #include "graphics.h"
-#include "frame_control.h"
+#include "frame_sync.h"
 #include <agon/vdp_vdu.h>
 #include <stdbool.h>
 

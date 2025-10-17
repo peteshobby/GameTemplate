@@ -15,16 +15,24 @@
  */
 
 /**
- * @file  frame_control.h
- * @brief Frame control API.
+ * @file  cx16_frame_sync.c
+ * @brief Commander X16 wait for the next vertical sync.
  */
 
-#ifndef FRAME_CONTROL_H_
-#define FRAME_CONTROL_H_
+ #include "frame_sync.h"
+#include <cx16.h>
+#include <time.h>
 
-#include <stdint.h>
+static clock_t start; 
+static clock_t next;
 
-void WaitForFrames(uint8_t count);
-void FrameSync(void);
+// This function:
+// Waits for the system clock to change.
+// The clock is incremented by the default interrupt handler every VSYNC.
+void FrameSync(void) {
+    start = clock();
 
-#endif // FRAME_CONTROL_H_
+    do {
+        next = clock();
+    } while (start == next);
+}

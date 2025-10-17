@@ -21,7 +21,7 @@
 
  #include "splashscreen.h"
 #include "constants.h"
-#include "frame_control.h"
+#include "frame_sync.h"
 #include "graphics.h"
 #include "text_color.h"
 #include "text_utilities.h"

@@ -15,32 +15,15 @@
  */
 
 /**
- * @file  cx16_frame_control.c
- * @brief Commander X16 wait for the next vertical sync.
+ * @file  aqplus_frame_sync.c
+ * @brief Aquarius+ wait for the next vertical sync.
  */
 
- #include "frame_control.h"
-#include <cx16.h>
-#include <time.h>
-#include <stdbool.h>
+#include "frame_sync.h"
 
-void WaitForFrames(uint8_t count) {
-	uint8_t i;
+#include <aqplus.h>
 
-	for (i = 0; i < count; ++i)
-		FrameSync();
-}
-
-static clock_t start; 
-static clock_t next;
-
-// This function:
-// Waits for the system clock to change.
-// The clock is incremented by the default interrupt handler every VSYNC.
+// Wait for the vertical refresh
 void FrameSync(void) {
-    start = clock();
-
-    do {
-        next = clock();
-    } while (start == next);
+	video_wait_eof();
 }

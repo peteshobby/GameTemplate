@@ -15,23 +15,16 @@
  */
 
 /**
- * @file  aqplus_frame_control.c
- * @brief Aquarius+ wait for the next vertical sync.
+ * @file  frame_sync.h
+ * @brief Frame sync API.
  */
 
-#include "frame_control.h"
+#ifndef FRAME_SYNC_H_
+#define FRAME_SYNC_H_
 
-#include <aqplus.h>
+#include <stdint.h>
 
-void WaitForFrames(uint8_t count) {
-	uint8_t i;
+void WaitForFrames(uint8_t count);
+void FrameSync(void);
 
-	for (i = 0; i < count; ++i)
-		FrameSync();
-}
-
-
-// Wait for the vertical refresh
-void FrameSync(void) {
-	video_wait_eof();
-}
+#endif // FRAME_SYNC_H_

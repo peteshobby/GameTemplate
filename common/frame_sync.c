@@ -15,27 +15,15 @@
  */
 
 /**
- * @file  agon_frame_control.c
- * @brief Agon Light wait for the next vertical sync.
+ * @file  frame_sync.c
+ * @brief Commom wait for the next vertical sync.
  */
 
-#include "frame_control.h"
-#include <agon/vdp_vdu.h>
-
-
+#include "frame_sync.h"
 
 void WaitForFrames(uint8_t count) {
 	uint8_t i;
 
 	for (i = 0; i < count; ++i)
 		FrameSync();
-}
-
-
-// Wait for the vertical refresh
-// Swap the display buffers if double buffered
-void FrameSync(void) {
-	putch(23);
-	putch(0);
-	putch(0xC3);
 }
