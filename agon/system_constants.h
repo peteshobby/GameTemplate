@@ -29,4 +29,7 @@
 #define SCREEN_WIDTH        40
 #define SCREEN_HEIGHT       28
 
+// Start message
+#define START_MESSAGE		"Press FIRE to play"
+
 #endif // SYSTEM_CONSTANTS_H_

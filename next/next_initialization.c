@@ -22,6 +22,7 @@
  #include "initialization.h"
 #include "system_constants.h"
 #include "graphics.h"
+#include "joypad.h"
 #include "next_graphics_init.h"
 #include "next_palette_init.h"
 #include "text_color.h"
@@ -42,6 +43,7 @@ void InitializeSystem(void) {
 	uint8_t currentBank = ZXN_READ_MMU6();
 
 	EnableTurboMode();
+	InitializeJoypad();
 
 	ZXN_WRITE_MMU6(INIT_BANK);
 	InitializeGraphics();

@@ -54,7 +54,7 @@ void ShowSplashScreen(void) {
 	ShowColors();
 	ShowIntroduction();
 	FrameSync();
-
+	
 // Draw it again for double buffered systems.
 #ifdef DBLBUF
 	ClearTextScreen(BLACK);

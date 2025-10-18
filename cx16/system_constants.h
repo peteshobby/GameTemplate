@@ -44,4 +44,7 @@
 #define MAX_TILE_ROW    64
 #define MAX_TILE_COLUMN 128 // Seems to be broken for text
 
+// Start message
+#define START_MESSAGE		"Press START to play"
+
 #endif // SYSTEM_CONSTANTS_H_

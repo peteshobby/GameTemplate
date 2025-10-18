@@ -41,5 +41,7 @@
 #define PALETTE_GB  		0
 #define PALETTE_R   		1
 
+// Start message
+#define START_MESSAGE		"Press FIRE to play"
 
 #endif // SYSTEM_CONSTANTS_H_

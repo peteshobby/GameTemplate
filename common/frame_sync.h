@@ -22,9 +22,11 @@
 #ifndef FRAME_SYNC_H_
 #define FRAME_SYNC_H_
 
+#include <stdbool.h>
 #include <stdint.h>
 
 void WaitForFrames(uint8_t count);
+bool WaitForFramesCheckForFire(uint8_t count);
 void FrameSync(void);
 
 #endif // FRAME_SYNC_H_

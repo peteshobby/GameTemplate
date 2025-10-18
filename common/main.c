@@ -19,11 +19,12 @@
  * @brief Program entry point.
  */
 
- #include "initialization.h"
+#include "initialization.h"
 #include "splashscreen.h"
-
+#include "attract_screen.h"
 int main(void) {
 	InitializeSystem();
 	ShowSplashScreen();	
+	ShowAttractScreen();
 	return 0;
 }

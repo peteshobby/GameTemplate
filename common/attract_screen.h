@@ -15,35 +15,13 @@
  */
 
 /**
- * @file  frame_sync.c
- * @brief Commom wait functions for the next vertical sync.
+ * @file  attract_screen.h
+ * @brief Attract screen API.
  */
 
-#include "frame_sync.h"
-#include "joypad.h"
+#ifndef ATTRACT_SCREEN_H_
+#define ATTRACT_SCREEN_H_
 
-void WaitForFrames(uint8_t count) {
-	uint8_t i;
+void ShowAttractScreen(void);
 
-	for (i = 0; i < count; ++i)
-		FrameSync();
-}
-
-bool CheckJoypadButtons(void) {
-	uint16_t state1 = GetLeftJoypadState();
-	uint16_t state2 = GetRightJoypadState();
-
-	return GetJoypadButtons(state1) != 0 || GetJoypadButtons(state2) != 0;
-}
-
-bool WaitForFramesCheckForFire(uint8_t count) {
-	uint8_t i;
-
-	for (i = 0; i < count; ++i) {
-		FrameSync();
-		if (CheckJoypadButtons())
-			return true;
-	}
-
-	return false;
-}
+#endif // ATTRACT_SCREEN_H_
