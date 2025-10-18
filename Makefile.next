@@ -1,5 +1,5 @@
 CC=zcc
-NEXT_SRC=   common/*.c next/*.c next/*.asm next_banked/*.c
+NEXT_SRC=   common/*.c next/*.c next/*.asm next_banked/*.c common_banked/*.c
 
 OUT_NAME=template
 

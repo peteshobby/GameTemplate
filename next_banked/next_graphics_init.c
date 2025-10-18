@@ -24,12 +24,7 @@
 #include <arch/zxn.h>
 
 
-#define RTM_28MHZ	3
 
-void EnableTurboMode(void) {
-   //  ZXN_NEXTREGA(REG_TURBO_MODE, RTM_3MHZ);
-	ZXN_NEXTREGA(REG_TURBO_MODE, RTM_28MHZ);
-}
 
 // Sets layer order to layer 2 on top, then sprites, then tilemap
 void SetLayerPriority(void) {

@@ -15,23 +15,13 @@
  */
 
 /**
- * @file  agon_initialization.c
- * @brief Agon Light one time initialization functions.
+ * @file  aqplus_graphics_init.h
+ * @brief Aquarius+ one time graphics initialization functions.
  */
 
-#include "initialization.h"
-#include "agon_graphics_init.h"
+#ifndef AQPLUS_GRAPHICS_INIT_H_
+#define AQPLUS_GRAPHICS_INIT_H_
 
-#include <agon/vdp_vdu.h>
-#include <agon/vdp_key.h>
+void InitializeGraphics(void);
 
-// Not handling errors
-void InitializeAgon(void) {
-	vdp_vdu_init();
-	vdp_key_init();
-}
-
-void InitializeSystem(void) {
-	InitializeAgon();
-	InitializeGraphics();
-}
+#endif // AQPLUS_GRAPHICS_INIT_H_

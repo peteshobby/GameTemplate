@@ -35,4 +35,11 @@
 #define BORDER_COLOR        0x37FF
 #define CHARRAM_SIZE        0x0400
 
+// Palettes
+#define PALETTE_SIZE        32
+#define MAX_PALETTE         4
+#define PALETTE_GB  		0
+#define PALETTE_R   		1
+
+
 #endif // SYSTEM_CONSTANTS_H_

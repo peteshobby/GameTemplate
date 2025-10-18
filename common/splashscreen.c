@@ -48,6 +48,8 @@ void ShowColors(void) {
 void ShowIntroduction(void) {
 	int color;
 
+	ClearTextScreen(BLACK);
+
 	for (color = 0; color < MAX_TEXT_COLOR; ++color)
 		DisplayChar(0, color, ' ', COLOR(color, color));
 
@@ -62,7 +64,7 @@ void ShowIntroduction(void) {
 	// DisplaySigned8Bit(4, 30, 128, COLOR(WHITE, BLACK), '0', 4);
 	// DisplaySigned8Bit(5, 30, -127, COLOR(WHITE, BLACK), '0', 5);
 
-	DisplaySigned8Bit(1, 29, -1, COLOR(15, 1), '0', 10);
+	DisplaySigned8Bit(1, 29, -1, COLOR(12, 8), '0', 10);
 
 
 	FrameSync();

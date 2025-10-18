@@ -1,6 +1,6 @@
 OUTFILE      = template.aqx
-INC_DIRS    += aqplus common  banked
-SRC_DIRS    += aqplus common  banked
+INC_DIRS    += aqplus common  common_banked
+SRC_DIRS    += aqplus common common_banked
 BUILD_DIR   = build_aqplus
 CFLAGS      += -DVERA_COMMON -DAQPLUS 
 

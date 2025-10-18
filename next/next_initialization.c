@@ -23,14 +23,24 @@
 #include "system_constants.h"
 #include "graphics.h"
 #include "next_graphics_init.h"
+#include "next_palette_init.h"
 #include "text_color.h"
+
+#include <arch/zxn.h>
 
 // Move the stack so I can use bank 3
 #pragma output REGISTER_SP           = 0xBFFF
 #pragma output CLIB_MALLOC_HEAP_SIZE = 0
 
+#define RTM_28MHZ	3
+
+void EnableTurboMode(void) {
+	ZXN_NEXTREGA(REG_TURBO_MODE, RTM_28MHZ);
+}
+
 void InitializeSystem(void) {
 	EnableTurboMode();
 	InitializeGraphics();
+	InitializePalette();
 	ClearTextScreen(TRANSPARENT);
 }

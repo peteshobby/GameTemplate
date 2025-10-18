@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2025 Peter Brown
  *
@@ -15,32 +16,26 @@
  */
 
 /**
- * @file  aqplus_initialization.c
- * @brief Aquarius+ one time initialization functions.
+ * @file  aqplus_palette_init.c
+ * @brief Aquarius+ one time palette initialization functions.
  */
 
-#include "initialization.h"
-#include "graphics.h"
-#include "aqplus_graphics.h"
-#include "aqplus_graphics_init.h"
 #include "aqplus_palette_init.h"
-#include "system_constants.h"
-#include "text_color.h"
+#include "palette.h"
+#include "constants.h"
+
 
 #include <aqplus.h>
 
-#define TURBO_MODE		0b00000100
-#define UNLIMITED_MODE	0b00001000
-
-
-void EnableTurboMode(void) {
-    IO_SYSCTRL |= TURBO_MODE;
-}
-
-void InitializeSystem() {
-	EnableTurboMode();
-	InitializeGraphics();
-	InitializePalette();
-	ClearTextScreen(BLACK);
-	SetBorder(BLACK);
+void InitializePalette(void) {
+    for (uint8_t index = 0; index < MAX_PALETTE; ++index) {
+        uint8_t palette = index << 5;
+        for (uint8_t i = 0; i < 16; i++) {
+            uint8_t entry = (i << 1);
+            IO_VPALSEL  = palette + entry + PALETTE_GB;
+            IO_VPALDATA = palettes[index][i][0];
+            IO_VPALSEL  = palette + entry + PALETTE_R;
+            IO_VPALDATA = palettes[index][i][1];
+        }
+    }
 }

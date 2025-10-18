@@ -1,5 +1,5 @@
 CC=cl65
-SRC_DIRS    += cx16 common banked
+SRC_DIRS    += cx16 common common_banked
 SRC    += $(wildcard $(addsuffix /*.c, $(SRC_DIRS)))
 HDR    += $(wildcard $(addsuffix /*.h, $(SRC_DIRS)))
 LIB_DIRS	+= cx16/lib

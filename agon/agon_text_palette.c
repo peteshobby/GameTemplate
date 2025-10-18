@@ -15,23 +15,11 @@
  */
 
 /**
- * @file  agon_initialization.c
- * @brief Agon Light one time initialization functions.
+ * @file  agon_text_palette.h
+ * @brief Agon Light text palette.
  */
 
-#include "initialization.h"
-#include "agon_graphics_init.h"
+#include "agon_text_palette.h"
+#include "palette.h"
 
-#include <agon/vdp_vdu.h>
-#include <agon/vdp_key.h>
-
-// Not handling errors
-void InitializeAgon(void) {
-	vdp_vdu_init();
-	vdp_key_init();
-}
-
-void InitializeSystem(void) {
-	InitializeAgon();
-	InitializeGraphics();
-}
+uint8_t agonTextPalette[PALETTE_ENTRIES] = { 0, 58, 42, 35, 47, 39, 24, 7, 0, 12, 9, 13, 10, 14, 11, 15};

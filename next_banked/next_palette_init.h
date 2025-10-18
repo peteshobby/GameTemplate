@@ -15,23 +15,13 @@
  */
 
 /**
- * @file  agon_initialization.c
- * @brief Agon Light one time initialization functions.
+ * @file  next_palette_init.h
+ * @brief ZX Spectrum Next X16 one time palette initialization functions.
  */
 
-#include "initialization.h"
-#include "agon_graphics_init.h"
+#ifndef NEXT_PALETTE_INIT_H_
+#define NEXT_PALETTE_INIT_H_
 
-#include <agon/vdp_vdu.h>
-#include <agon/vdp_key.h>
+void InitializePalette(void);
 
-// Not handling errors
-void InitializeAgon(void) {
-	vdp_vdu_init();
-	vdp_key_init();
-}
-
-void InitializeSystem(void) {
-	InitializeAgon();
-	InitializeGraphics();
-}
+#endif // NEXT_PALETTE_INIT_H_

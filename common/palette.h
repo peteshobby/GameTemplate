@@ -15,23 +15,25 @@
  */
 
 /**
- * @file  agon_initialization.c
- * @brief Agon Light one time initialization functions.
+ * @file  palettes.h
+ * @brief Common palette definitions.
  */
 
-#include "initialization.h"
-#include "agon_graphics_init.h"
+#ifndef PALETTES_H_
+#define PALETTES_H_
 
-#include <agon/vdp_vdu.h>
-#include <agon/vdp_key.h>
+#include <stdint.h>
 
-// Not handling errors
-void InitializeAgon(void) {
-	vdp_vdu_init();
-	vdp_key_init();
-}
+#define MAX_PALETTE			4
+#define PALETTE_ENTRIES		16
+#define PALETTE_BYTES		2
 
-void InitializeSystem(void) {
-	InitializeAgon();
-	InitializeGraphics();
-}
+extern const uint8_t palettes[MAX_PALETTE][PALETTE_ENTRIES][PALETTE_BYTES];
+
+// Palette name constants.
+#define OVERLAY	0
+#define PLAYER_AND_SHOTS	1
+#define GRID_AND_ENEMIES	2
+#define MORE_ENEMIES	3
+
+#endif // PALETTES_H_
