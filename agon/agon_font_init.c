@@ -15,22 +15,27 @@
  */
 
 /**
- * @file  constants.h
- * @brief Global constants.
+ * @file  agon_font_init.c
+ * @brief Agon Light one time font initialization function.
  */
 
-#ifndef CONSTANTS_H_
-#define CONSTANTS_H_
+#include "agon_font_init.h"
+#include "font.h"
 
-#include "system_constants.h"
+#include <agon/vdp_vdu.h>
+#include <stdint.h>
 
-// Game Information
-#define GAME_NAME		"Game Template"
-#define GAME_COPYRIGHT  "  2025 Peter Brown"
-#define GAME_WEBSITE	"https://peteshobby.com/gametemplate"
+void InitializeFont(void) {
+    uint16_t ch;
+    uint8_t data;
 
-// Characters
-#define SPACE_CHAR          0x20
-#define COPYRIGHT_CHAR      0x7E
-
-#endif // CONSTANTS_H_
+    for (ch = 0; ch <= 255; ++ch) {
+        putch(23);
+        putch(0);
+        putch(0x90);
+        putch(ch);
+        for (data = 0; data < 8; ++data) {
+            putch(font[ch * 8 + data]);
+        }
+    }
+}

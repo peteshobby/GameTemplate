@@ -15,22 +15,23 @@
  */
 
 /**
- * @file  constants.h
- * @brief Global constants.
+ * @file  aqplus_font_init.c
+ * @brief Aquarius+ one time font initialization function.
  */
 
-#ifndef CONSTANTS_H_
-#define CONSTANTS_H_
+#include "aqplus_font_init.h"
+#include "font.h"
 
-#include "system_constants.h"
+#include <aqplus.h>
+#include <stdint.h>
 
-// Game Information
-#define GAME_NAME		"Game Template"
-#define GAME_COPYRIGHT  "  2025 Peter Brown"
-#define GAME_WEBSITE	"https://peteshobby.com/gametemplate"
+void InitializeFont(void) {
+    uint8_t *characterRam = (uint8_t *) 0xC000;
+    // Map UDC Ram (page 21) to $C000 (bank 3)
+    IO_BANK3 = 21;
+   
+    memcpy(characterRam, font, FONT_SIZE);
 
-// Characters
-#define SPACE_CHAR          0x20
-#define COPYRIGHT_CHAR      0x7E
-
-#endif // CONSTANTS_H_
+	// Map bank 3 to VIDEO Ram
+    IO_BANK3 = 20;	
+}

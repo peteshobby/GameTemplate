@@ -15,7 +15,7 @@
  */
 
 /**
- * @file  palettes.h
+ * @file  palette.h
  * @brief Common palette definitions.
  */
 

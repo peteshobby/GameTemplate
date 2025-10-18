@@ -15,22 +15,16 @@
  */
 
 /**
- * @file  constants.h
- * @brief Global constants.
+ * @file  font.h
+ * @brief Common font data.
  */
 
-#ifndef CONSTANTS_H_
-#define CONSTANTS_H_
+#ifndef FONT_H_
+#define FONT_H_
 
-#include "system_constants.h"
+#include <stdint.h>
 
-// Game Information
-#define GAME_NAME		"Game Template"
-#define GAME_COPYRIGHT  "  2025 Peter Brown"
-#define GAME_WEBSITE	"https://peteshobby.com/gametemplate"
+#define FONT_SIZE	2048
+extern uint8_t font[FONT_SIZE];
 
-// Characters
-#define SPACE_CHAR          0x20
-#define COPYRIGHT_CHAR      0x7E
-
-#endif // CONSTANTS_H_
+#endif // FONT_H_

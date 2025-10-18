@@ -7,7 +7,7 @@ DESCRIPTION = "Game Template"
 COMPRESSED = NO
 LDHAS_ARG_PROCESSING = 0
 LTO = yes
-SRCDIRS = common agon banked
+SRCDIRS = common agon common_banked
 SRCDIR = common 
 EXTRA_USERHEADERS = agon 
 

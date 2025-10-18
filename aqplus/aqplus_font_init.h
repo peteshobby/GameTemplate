@@ -15,22 +15,13 @@
  */
 
 /**
- * @file  constants.h
- * @brief Global constants.
+ * @file  aqplus_font_init.h
+ * @brief Aquarius+ one time font initialization function.
  */
 
-#ifndef CONSTANTS_H_
-#define CONSTANTS_H_
+#ifndef AQPLUS_FONT_INIT_H_
+#define AQPLUS_FONT_INIT_H_
 
-#include "system_constants.h"
+void InitializeFont(void);
 
-// Game Information
-#define GAME_NAME		"Game Template"
-#define GAME_COPYRIGHT  "  2025 Peter Brown"
-#define GAME_WEBSITE	"https://peteshobby.com/gametemplate"
-
-// Characters
-#define SPACE_CHAR          0x20
-#define COPYRIGHT_CHAR      0x7E
-
-#endif // CONSTANTS_H_
+#endif // AQPLUS_FONT_INIT_H_

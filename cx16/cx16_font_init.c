@@ -15,22 +15,24 @@
  */
 
 /**
- * @file  constants.h
- * @brief Global constants.
+ * @file  cx16_font_init.c
+ * @brief Commander X16 one time font initialization function.
  */
 
-#ifndef CONSTANTS_H_
-#define CONSTANTS_H_
+#include "cx16_font_init.h"
+#include "font.h"
 
-#include "system_constants.h"
+#include <cx16.h>
+#include <stdint.h>
 
-// Game Information
-#define GAME_NAME		"Game Template"
-#define GAME_COPYRIGHT  "  2025 Peter Brown"
-#define GAME_WEBSITE	"https://peteshobby.com/gametemplate"
+void InitializeFont(void) {
+    int i;
+    unsigned long tileBaseAddress = 0x01F000;
+    VERA.address = tileBaseAddress;
+    VERA.address_hi = tileBaseAddress>>16;
+    VERA.address_hi |= VERA_INC_1;
 
-// Characters
-#define SPACE_CHAR          0x20
-#define COPYRIGHT_CHAR      0x7E
-
-#endif // CONSTANTS_H_
+    for (i = 0; i < FONT_SIZE; i++) {
+        VERA.data0 = font[i];
+    }
+}

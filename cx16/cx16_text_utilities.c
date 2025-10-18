@@ -26,8 +26,7 @@
 
 #include <cx16.h>
 
-// Need ascii_charmap.h to map character codes to standard ascii.
-#include <ascii_charmap.h>
+
 
 void DisplayText(uint8_t row, uint8_t column, const char* text, uint8_t color) {
 	uint32_t offset = ((row * MAX_TILE_COLUMN) + column) * 2;

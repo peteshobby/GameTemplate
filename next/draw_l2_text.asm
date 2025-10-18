@@ -18,7 +18,7 @@
 SECTION code_user
 PUBLIC _DisplayChar
 
-_udg        = 0x3c00
+EXTERN _font
 
 ARG_Y       =   8
 ARG_X       =   9
@@ -64,7 +64,7 @@ _DisplayChar:
     sla     c
     rl      b
 
-    ld      hl, _udg
+    ld      hl, _font
     ld      a, l
     add     a, c
     ld      l, a

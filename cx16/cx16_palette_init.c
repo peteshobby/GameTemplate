@@ -34,9 +34,8 @@ void InitializePalette(void) {
         unsigned long PaletteBaseAddr = 0x1FA00 + (index * 32);
         VERA.address = PaletteBaseAddr;
         VERA.address_hi = PaletteBaseAddr >> 16;
-        VERA.address_hi |= 0b10000;
+        VERA.address_hi |= VERA_INC_1;
         
-
         for (i = 0; i < PALETTE_ENTRIES; i++) {
            VERA.data0 = palettes[index][i][0];
            VERA.data0 = palettes[index][i][1];

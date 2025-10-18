@@ -19,8 +19,12 @@
  * @brief Commander X16 global constants.
  */
 
- #ifndef SYSTEM_CONSTANTS_H_
+#ifndef SYSTEM_CONSTANTS_H_
 #define SYSTEM_CONSTANTS_H_
+
+// Need to include ascii_charmap.h in every file that defines strings to map
+// character codes to standard ascii.
+#include <ascii_charmap.h>
 
 // VERA
 // Layers

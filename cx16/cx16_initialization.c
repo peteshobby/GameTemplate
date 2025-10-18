@@ -21,12 +21,13 @@
 
 #include "initialization.h"
 #include "system_constants.h"
-#include "graphics.h"
+#include "cx16_font_init.h"
 #include "cx16_graphics_init.h"
 #include "cx16_palette_init.h"
-
+#include "graphics.h"
 
 void InitializeSystem() {
 	InitializeGraphics();
 	InitializePalette();
+	InitializeFont();
 }

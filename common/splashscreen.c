@@ -58,15 +58,6 @@ void ShowIntroduction(void) {
 	DisplayChar(SCREEN_HEIGHT / 2 + 2, SCREEN_WIDTH / 2 - 9, COPYRIGHT_CHAR, COLOR(WHITE, BLACK));
 	DisplayCenteredText(SCREEN_HEIGHT - 3, GAME_WEBSITE, COLOR(WHITE, BLACK));
 
-	// DisplaySigned8Bit(1, 30, 0, COLOR(WHITE, BLACK), '0', 2);
-	// DisplaySigned8Bit(2, 30, 99, COLOR(WHITE, BLACK), '0', 4);
-	// DisplaySigned8Bit(3, 30, -99, COLOR(WHITE, BLACK), '0', 5);
-	// DisplaySigned8Bit(4, 30, 128, COLOR(WHITE, BLACK), '0', 4);
-	// DisplaySigned8Bit(5, 30, -127, COLOR(WHITE, BLACK), '0', 5);
-
-	DisplaySigned8Bit(1, 29, -1, COLOR(12, 8), '0', 10);
-
-
 	FrameSync();
 }
 
