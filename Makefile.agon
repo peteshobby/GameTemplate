@@ -14,8 +14,8 @@ EXTRA_USERHEADERS = agon
 BSSHEAP_LOW = 060000
 BSSHEAP_HIGH = 09FFFF
 
-CFLAGS = -Wall -Wextra -Wmain-return-type -Oz -DAGON
-CXXFLAGS = -Wall -Wextra -Wmain-return-type -Oz -DAGON
+CFLAGS = -Wall -Wextra -Wmain-return-type -Oz -DAGON -DDBLBUF
+CXXFLAGS = -Wall -Wextra -Wmain-return-type -Oz -DAGON -DBLBUF
 
 EMULATOR_DIR=c:\fab-agon-emulator
 EMULATOR_BIN=fab-agon-emulator.exe

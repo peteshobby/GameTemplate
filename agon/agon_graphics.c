@@ -30,8 +30,6 @@
 void ClearTextScreen(uint8_t backgroundColor) {
 	vdp_set_text_colour(agonTextPalette[backgroundColor] + 128);
 	vdp_clear_screen();
-	FrameSync();
-	vdp_clear_screen();
 }
 
 

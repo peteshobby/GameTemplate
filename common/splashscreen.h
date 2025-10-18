@@ -19,7 +19,7 @@
  * @brief Splashscreen API.
  */
 
- #ifndef SPLASHSCREEN_H_
+#ifndef SPLASHSCREEN_H_
 #define SPLASHSCREEN_H_
 
 void ShowSplashScreen(void);

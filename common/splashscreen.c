@@ -29,39 +29,39 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define MAX_COLOR		3
 #define SPLASH_DELAY	50
 
 void ShowColors(void) {
-	uint8_t color;
+	uint8_t row;
+	uint8_t column;
 
-	for (color = MAX_COLOR; color != 0; --color) {
-		ClearTextScreen(color);
-// Need to clear twice for Agon double buffer
-		FrameSync();
-		ClearTextScreen(color);
-	
-		WaitForFrames(SPLASH_DELAY);
+	for (row = 0; row < MAX_TEXT_COLOR; ++row) {
+		for (column = 0; column < SCREEN_WIDTH; ++column)
+			DisplayChar(row, column, ' ', COLOR(row, row));
 	}
 }
 
 void ShowIntroduction(void) {
-	int color;
-
-	ClearTextScreen(BLACK);
-
-	for (color = 0; color < MAX_TEXT_COLOR; ++color)
-		DisplayChar(0, color, ' ', COLOR(color, color));
-
-	DisplayCenteredText(SCREEN_HEIGHT / 2, GAME_NAME, COLOR(WHITE, BLACK));
-	DisplayCenteredText(SCREEN_HEIGHT / 2 + 2, GAME_COPYRIGHT, COLOR(WHITE, BLACK));
-	DisplayChar(SCREEN_HEIGHT / 2 + 2, SCREEN_WIDTH / 2 - 9, COPYRIGHT_CHAR, COLOR(WHITE, BLACK));
+	
+	DisplayCenteredText(MAX_TEXT_COLOR + 2, GAME_NAME, COLOR(WHITE, BLACK));
+	DisplayCenteredText(MAX_TEXT_COLOR + 4, GAME_COPYRIGHT, COLOR(WHITE, BLACK));
+	DisplayChar(MAX_TEXT_COLOR + 4, SCREEN_WIDTH / 2 - 9, COPYRIGHT_CHAR, COLOR(WHITE, BLACK));
 	DisplayCenteredText(SCREEN_HEIGHT - 3, GAME_WEBSITE, COLOR(WHITE, BLACK));
-
-	FrameSync();
 }
 
 void ShowSplashScreen(void) {
+	ClearTextScreen(BLACK);
 	ShowColors();
 	ShowIntroduction();
+	FrameSync();
+
+// Draw it again for double buffered systems.
+#ifdef DBLBUF
+	ClearTextScreen(BLACK);
+	ShowColors();
+	ShowIntroduction();
+#endif // DBLBUF
+
+// Pause briefly so it can be read
+	WaitForFrames(SPLASH_DELAY);
 }

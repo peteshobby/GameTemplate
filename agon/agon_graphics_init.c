@@ -24,8 +24,11 @@
 #include <agon/vdp_vdu.h>
 #include <stdbool.h>
 
+#define MODE_320_240_64		8
+#define DOUBLE_BUFFER		128
+
 void InitializeGraphics(void) {
-vdp_mode(136);
+	vdp_mode(MODE_320_240_64 + DOUBLE_BUFFER);
 	
 // Hide cursor
 	vdp_cursor_enable( false );
