@@ -1,11 +1,12 @@
 CC=zcc
-NEXT_SRC=   common/*.c next/*.c next/*.asm next_banked/*.c common_banked/*.c
+NEXT_SRC=   common/*.c next/*.c next/*.asm common_banked/*.c
 
 OUT_NAME=template
 
 $(OUT_NAME).nex:
 	@mkdir -p build_next
-	$(CC) +zxn -m -clib=sdcc_iy   -Ca-DNEXT -DNEXT -lm  -create-app  -subtype=nex $(NEXT_SRC)  -iquote"next" -iquote"next_banked" -iquote"common" -iquote"banked" -iquote"C:\\SDKs\\z88dk\\include" -o build_next\\$(OUT_NAME).nex 
+	$(CC) +zxn -c -clib=sdcc_iy  -DNEXT  --codesegBANK_20 --constsegBANK_20 next_banked/*.c -iquote"next" -iquote"next_banked" -iquote"common" -iquote"common_banked" -iquote"C:\\SDKs\\z88dk\\include"
+	$(CC) +zxn -m -clib=sdcc_iy   -Ca-DNEXT -DNEXT -lm  -create-app  -subtype=nex $(NEXT_SRC) next_banked/*.o -iquote"next" -iquote"next_banked" -iquote"common" -iquote"banked" -iquote"C:\\SDKs\\z88dk\\include" -o build_next\\$(OUT_NAME).nex 
 
 clean:  
 	@rm -rf build_next

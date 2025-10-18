@@ -39,8 +39,14 @@ void EnableTurboMode(void) {
 }
 
 void InitializeSystem(void) {
+	uint8_t currentBank = ZXN_READ_MMU6();
+
 	EnableTurboMode();
+
+	ZXN_WRITE_MMU6(INIT_BANK);
 	InitializeGraphics();
 	InitializePalette();
+	ZXN_WRITE_MMU6(currentBank);
+
 	ClearTextScreen(TRANSPARENT);
 }

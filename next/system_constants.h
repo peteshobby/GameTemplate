@@ -38,6 +38,8 @@
 #define BANK_3_START_ADDRESS	0xC000
 #define BANK_LENGTH				0x4000
 
+#define INIT_BANK				40
+
 // Screen
 #define SCREEN_WIDTH        	40
 #define SCREEN_HEIGHT       	32
