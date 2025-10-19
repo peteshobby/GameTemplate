@@ -15,13 +15,13 @@
  */
 
 /**
- * @file  splashscreen.h
+ * @file  splash_screen.h
  * @brief Splashscreen API.
  */
 
-#ifndef SPLASHSCREEN_H_
-#define SPLASHSCREEN_H_
+#ifndef SPLASH_SCREEN_H_
+#define SPLASH_SCREEN_H_
 
 void ShowSplashScreen(void);
 
-#endif // SPLASHSCREEN_H_
+#endif // SPLASH_SCREEN_H_

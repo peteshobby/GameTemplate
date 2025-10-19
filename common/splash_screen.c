@@ -19,7 +19,7 @@
  * @brief Common splash screen shown once immediately after loading.
  */
 
- #include "splashscreen.h"
+#include "splash_screen.h"
 #include "constants.h"
 #include "frame_sync.h"
 #include "graphics.h"

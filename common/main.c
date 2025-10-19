@@ -20,8 +20,9 @@
  */
 
 #include "initialization.h"
-#include "splashscreen.h"
+#include "splash_screen.h"
 #include "attract_screen.h"
+
 int main(void) {
 	InitializeSystem();
 	ShowSplashScreen();	
