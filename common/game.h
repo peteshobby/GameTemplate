@@ -15,21 +15,17 @@
  */
 
 /**
- * @file  main.c
- * @brief Program entry point.
+ * @file  game.h
+ * @brief Game API.
  */
 
-#include "attract_screen.h"
-#include "game.h"
-#include "initialization.h"
-#include "splash_screen.h"
+ #ifndef GAME_H_
+ #define GAME_H_
 
-int main(void) {
-	InitializeSystem();
-	ShowSplashScreen();	
-	while(!gameQuit) {
-		ShowAttractScreen();
-		PlayGame();
-	}
-	return 0;
-}
+ #include <stdbool.h>
+
+ extern bool gameQuit;
+
+ void PlayGame(void);
+
+ #endif // GAME_H_

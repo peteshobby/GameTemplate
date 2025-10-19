@@ -15,21 +15,23 @@
  */
 
 /**
- * @file  main.c
- * @brief Program entry point.
+ * @file  game.h
+ * @brief Game API.
  */
 
-#include "attract_screen.h"
 #include "game.h"
-#include "initialization.h"
-#include "splash_screen.h"
+#include "frame_sync.h"
+#include "graphics.h"
+#include "text_color.h"
 
-int main(void) {
-	InitializeSystem();
-	ShowSplashScreen();	
-	while(!gameQuit) {
-		ShowAttractScreen();
-		PlayGame();
-	}
-	return 0;
-}
+bool gameQuit = false;
+
+void PlayGame(void) {
+	ClearTextScreen(WHITE);
+#ifdef DBLBUF
+	FrameSync();
+	ClearTextScreen(WHITE);
+#endif // DBLBUF
+
+	while(1);
+ }
