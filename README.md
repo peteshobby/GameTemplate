@@ -28,6 +28,13 @@ this was to all for all the initailation code in those sub-functions to be
 moved to a bank to make more memory available to the main game code if
 necessary.
 
+### Sprites and Tiles
+
+I keep both sprite and tile graphics data in the same arrays and copy them to
+the appropriate places in memory on initialization. This simplifies the process
+of coverting the sprite sheet into a C array in as far as I only have to do it
+once whenever I change or add graphics.
+
 ## Configured Capabilities
 
 ### Agon Light

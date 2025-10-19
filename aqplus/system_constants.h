@@ -23,6 +23,7 @@
 #define SYSTEM_CONSTANTS_H_
 
 // Graphics
+#define IMAGERAM			0xD000
 #define COLOR(fore, back)             ((fore << 4) | back)
 
 // Screen
@@ -34,6 +35,7 @@
 #define COLRRAM             0x3400
 #define BORDER_COLOR        0x37FF
 #define CHARRAM_SIZE        0x0400
+
 
 // Palettes
 #define PALETTE_SIZE        32

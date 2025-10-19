@@ -23,7 +23,12 @@
 #define SYSTEM_CONSTANTS_H_
 
 // Colors
-#define COLOR(fore, back)             ((back << 4) | fore)
+#define COLOR(fore, back)   ((back << 4) | fore)
+
+// Images
+#define RGBA2222            1
+#define IMAGE_BM_BASE       2000
+
 
 // Screen info
 #define SCREEN_WIDTH        40

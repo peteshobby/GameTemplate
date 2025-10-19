@@ -23,6 +23,7 @@
 #include "system_constants.h"
 #include "graphics.h"
 #include "joypad.h"
+#include "next_image_init.h"
 #include "next_graphics_init.h"
 #include "next_palette_init.h"
 #include "text_color.h"
@@ -48,6 +49,7 @@ void InitializeSystem(void) {
 	ZXN_WRITE_MMU6(INIT_BANK);
 	InitializeGraphics();
 	InitializePalette();
+	InitializeImageData();
 	ZXN_WRITE_MMU6(currentBank);
 
 	ClearTextScreen(TRANSPARENT);

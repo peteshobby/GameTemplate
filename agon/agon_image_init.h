@@ -15,25 +15,13 @@
  */
 
 /**
- * @file  cx16_initialization.c
- * @brief Commander X16 one time initialization functions.
+ * @file  agon_image_init.h
+ * @brief Agon Light one time image initialization functions.
  */
 
-#include "initialization.h"
-#include "system_constants.h"
-#include "cx16_font_init.h"
-#include "cx16_graphics_init.h"
-#include "cx16_image_init.h"
-#include "cx16_palette_init.h"
-#include "graphics.h"
-#include "constants.h"
-#include "text_color.h"
+#ifndef AGON_IMAGE_INIT_H_
+#define AGON_IMAGE_INIT_H_
 
-void InitializeSystem() {
-	InitializeGraphics();
-	InitializePalette();
-	InitializeFont();
-	InitializeImageData();
+void InitializeImageData(void);
 
-	ClearTextScreen(BLACK);
-}
+#endif // AGON_IMAGE_INIT_H_
