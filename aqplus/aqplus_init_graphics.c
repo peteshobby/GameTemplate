@@ -29,7 +29,8 @@
 
 // This function:
 // 1. sets the layer priorities
-// 2. remaps the border character
+// 2. Enables sprites
+// 3. remaps the border character
 void InitializeGraphics(void) {
 	IO_VCTRL =  VCTRL_MODE_TILE | 
 				VCTRL_TEXT_PRIO |

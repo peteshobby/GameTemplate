@@ -40,5 +40,8 @@ void InitializeGraphics(void) {
     VERA.display.hscale = 64;
     VERA.display.vscale = 64;
 
+// Enable Sprites
+	VERA.display.video |= ENABLE_SPRITES;
+
 	ClearTextScreen(TRANSPARENT);
 }

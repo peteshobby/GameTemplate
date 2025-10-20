@@ -15,29 +15,13 @@
  */
 
 /**
- * @file  agon_initialization.c
- * @brief Agon Light one time initialization functions.
+ * @file  agon_init_sprites.h
+ * @brief Agon Light one time sprite initialization functions.
  */
 
-#include "initialization.h"
-#include "agon_init_graphics.h"
-#include "agon_init_font.h"
-#include "agon_init_images.h"
-#include "agon_init_sprites.h"
+#ifndef AGON_INIT_SPRITES_H_
+#define AGON_INIT_SPRITES_H_
 
-#include <agon/vdp_vdu.h>
-#include <agon/vdp_key.h>
+void InitializeSprites(void);
 
-// Not handling errors
-void InitializeAgon(void) {
-	vdp_vdu_init();
-	vdp_key_init();
-}
-
-void InitializeSystem(void) {
-	InitializeAgon();
-	InitializeGraphics();
-	InitializeFont();
-	InitializeImages();
-	InitializeSprites();
-}
+#endif // AGON_INIT_SPRITES_H_

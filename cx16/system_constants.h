@@ -33,6 +33,8 @@
 #define TEXT_LAYER          layer1
 #define TILE_LAYER          layer0
 
+#define ENABLE_SPRITES		64
+
 // Colors
 #define COLOR(fore, back)	((back << 4) | fore) 
 
