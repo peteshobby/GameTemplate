@@ -15,13 +15,13 @@
  */
 
 /**
- * @file  cx16_palette_init.h
- * @brief Commander X16 one time palette initialization functions.
+ * @file  agon_font_init.h
+ * @brief Agon Light one time font initialization function.
  */
 
-#ifndef CX16_PALETTE_INIT_H_
-#define CX16_PALETTE_INIT_H_
+#ifndef AGON_INIT_FONT_H_
+#define AGON_INIT_FONT_H_
 
-void InitializePalette(void);
+void InitializeFont(void);
 
-#endif // CX16_PALETTE_INIT_H_
+#endif // AGON_INIT_FONT_H_

@@ -15,13 +15,26 @@
  */
 
 /**
- * @file  aqplus_graphics_init.h
- * @brief Aquarius+ one time graphics initialization functions.
+ * @file  agon_init_graphics.c
+ * @brief Agon Light one time graphics initialization functions.
  */
 
-#ifndef AQPLUS_GRAPHICS_INIT_H_
-#define AQPLUS_GRAPHICS_INIT_H_
+#include "agon_init_graphics.h"
+#include "graphics.h"
 
-void InitializeGraphics(void);
+#include <agon/vdp_vdu.h>
+#include <stdbool.h>
 
-#endif // AQPLUS_GRAPHICS_INIT_H_
+#define MODE_320_240_64		8
+#define DOUBLE_BUFFER		128
+
+void InitializeGraphics(void) {
+	vdp_mode(MODE_320_240_64 + DOUBLE_BUFFER);
+	
+// Hide cursor
+	vdp_cursor_enable( false );
+
+// Turn off screen scaling.
+	vdp_logical_scr_dims(false);
+	ClearTextScreen(0);
+}

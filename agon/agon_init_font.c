@@ -15,13 +15,27 @@
  */
 
 /**
- * @file  cx16_graphics_init.h
- * @brief Commander X16 one time graphics initialization functions.
+ * @file  agon_init_font.c
+ * @brief Agon Light one time font initialization function.
  */
 
-#ifndef CX16_GRAPHICS_INIT_H_
-#define CX16_GRAPHICS_INIT_H_
+#include "agon_init_font.h"
+#include "font.h"
 
-void InitializeGraphics(void);
+#include <agon/vdp_vdu.h>
+#include <stdint.h>
 
-#endif // CX16_GRAPHICS_INIT_H_
+void InitializeFont(void) {
+    uint16_t ch;
+    uint8_t data;
+
+    for (ch = 0; ch <= 255; ++ch) {
+        putch(23);
+        putch(0);
+        putch(0x90);
+        putch(ch);
+        for (data = 0; data < 8; ++data) {
+            putch(font[ch * 8 + data]);
+        }
+    }
+}

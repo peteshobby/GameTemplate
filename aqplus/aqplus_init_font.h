@@ -15,13 +15,13 @@
  */
 
 /**
- * @file  agon_font_init.h
- * @brief Agon Light one time font initialization function.
+ * @file  aqplus_init_font.h
+ * @brief Aquarius+ one time font initialization function.
  */
 
-#ifndef AGON_FONT_INIT_H_
-#define AGON_FONT_INIT_H_
+#ifndef AQPLUS_INIT_FONT_H_
+#define AQPLUS_INIT_FONT_H_
 
 void InitializeFont(void);
 
-#endif // AGON_FONT_INIT_H_
+#endif // AQPLUS_INIT_FONT_H_

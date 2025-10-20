@@ -20,20 +20,19 @@
  */
 
 #include "initialization.h"
-#include "system_constants.h"
-#include "cx16_font_init.h"
-#include "cx16_graphics_init.h"
-#include "cx16_image_init.h"
-#include "cx16_palette_init.h"
-#include "graphics.h"
 #include "constants.h"
+#include "cx16_init_font.h"
+#include "cx16_init_graphics.h"
+#include "cx16_init_images.h"
+#include "cx16_init_palette.h"
+#include "graphics.h"
 #include "text_color.h"
 
 void InitializeSystem() {
 	InitializeGraphics();
 	InitializePalette();
 	InitializeFont();
-	InitializeImageData();
+	InitializeImages();
 
 	ClearTextScreen(BLACK);
 }

@@ -15,11 +15,11 @@
  */
 
 /**
- * @file  agon_image_init.h
+ * @file  agon_init_images.h
  * @brief Agon Light one time image initialization functions.
  */
 
-#include "agon_image_init.h"
+#include "agon_init_images.h"
 #include "constants.h"
 #include "images.h"
 #include "large_image_data.h"
@@ -49,7 +49,7 @@ void InitializeLargeImages(void) {
     }
 }
 
-void InitializeImageData(void) {
+void InitializeImages(void) {
 	InitializeLargeImages();
     InitializeSmallImages();
 }

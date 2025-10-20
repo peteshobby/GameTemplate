@@ -15,11 +15,11 @@
  */
 
 /**
- * @file  aqplus_image_init.c
+ * @file  aqplus_init_images.c
  * @brief Aquarius+ one time image initialization functions.
  */
 
-#include "aqplus_image_init.h"
+#include "aqplus_init_images.h"
 #include "images.h"
 #include "constants.h"
 
@@ -76,7 +76,7 @@ void InitializeLargeImages(void) {
 // To use the space effectively I spilt images into large and small.
 // Large are 16x16 which is the standard size for images on some other systems.
 // Small are 8x8.
-void InitializeImageData(void) {
+void InitializeImages(void) {
 	InitializeLargeImages();
     InitializeSmallImages();
 }

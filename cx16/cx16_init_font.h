@@ -15,13 +15,13 @@
  */
 
 /**
- * @file  cx16_image_init.h
- * @brief Commander X16 one time image initialization functions.
+ * @file  cx16_init_font.h
+ * @brief Commander X16 one time font initialization function.
  */
 
-#ifndef CX16_IMAGE_INIT_H_
-#define CX16_IMAGE_INIT_H_
+#ifndef CX16_INIT_FONT_H_
+#define CX16_INIT_FONT_H_
 
-void InitializeImageData(void);
+void InitializeFont(void);
 
-#endif // CX16_IMAGE_INIT_H_
+#endif // CX16_INIT_FONT_H_

@@ -15,11 +15,11 @@
  */
 
 /**
- * @file  cx16_image_init.c
+ * @file  cx16_init_images.c
  * @brief Commander X16 one time image initialization functions.
  */
 
- #include "cx16_image_init.h"
+ #include "cx16_init_images.h"
  #include "images.h"
 
  #include <cx16.h>
@@ -70,7 +70,7 @@ void LoadSmallImages(void) {
     }
 }
 
-void InitializeImageData(void) {
+void InitializeImages(void) {
     LoadLargeImages();
     LoadSmallImages();
 }

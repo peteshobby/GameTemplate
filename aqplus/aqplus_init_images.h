@@ -15,14 +15,13 @@
  */
 
 /**
- * @file  next_graphics_init.h
- * @brief ZX Spectrum Next one time graphics initialization functions.
+ * @file  aqplus_init_images.h
+ * @brief Aquarius+ one time image initialization functions.
  */
 
-#ifndef NEXT_GRAPHICS_INIT_H_
-#define NEXT_GRAPHICS_INIT_H_
+#ifndef AQPLUS_INIT_IMAGES_H_
+#define AQPLUS_INIT_IMAGES_H_
 
-void EnableTurboMode(void);
-void InitializeGraphics(void);
+void InitializeImages(void);
 
-#endif // NEXT_GRAPHICS_INIT_H_
+#endif // AQPLUS_INIT_IMAGES_H_

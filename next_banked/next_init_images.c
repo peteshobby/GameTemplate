@@ -15,11 +15,11 @@
  */
 
 /**
- * @file  next_image_init.c
+ * @file  next_init_images.c
  * @brief ZX Spectrum Next one time image initialization functions.
  */
 
- #include "next_image_init.h"
+#include "next_init_images.h"
 #include "constants.h"
 #include "images.h"
 
@@ -66,7 +66,7 @@ void LoadLargeImages(void) {
     }
 }
 
-void InitializeImageData(void) {
+void InitializeImages(void) {
     LoadLargeImages();
     LoadSmallImages();
 }

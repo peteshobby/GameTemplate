@@ -16,13 +16,13 @@
  */
 
 /**
- * @file  cx16_palette_init.h
+ * @file  cx16_init_palette.c
  * @brief Commander X16 one time palette initialization functions.
  */
 
-#include "cx16_palette_init.h"
-#include "palette.h"
+#include "cx16_init_palette.h"
 #include "constants.h"
+#include "palette.h"
 
 #include <cx16.h>
 

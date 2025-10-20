@@ -16,11 +16,11 @@
  */
 
 /**
- * @file  next_palette_init.h
+ * @file  next_init_palette.h
  * @brief ZX Spectrum Next one time palette initialization functions.
  */
 
-#include "next_palette_init.h"
+#include "next_init_palette.h"
 #include "palette.h"
 #include "constants.h"
 

@@ -15,24 +15,25 @@
  */
 
 /**
- * @file  cx16_font_init.c
- * @brief Commander X16 one time font initialization function.
+ * @file  aqplus_init_graphics.c
+ * @brief Aquarius+ one time graphics initialization functions.
  */
 
-#include "cx16_font_init.h"
-#include "font.h"
+#include "aqplus_init_graphics.h"
+#include "graphics.h"
+#include "constants.h"
 
-#include <cx16.h>
-#include <stdint.h>
+#include <aqplus.h>
 
-void InitializeFont(void) {
-    int i;
-    unsigned long tileBaseAddress = 0x01F000;
-    VERA.address = tileBaseAddress;
-    VERA.address_hi = tileBaseAddress>>16;
-    VERA.address_hi |= VERA_INC_1;
 
-    for (i = 0; i < FONT_SIZE; i++) {
-        VERA.data0 = font[i];
-    }
+
+// This function:
+// 1. sets the layer priorities
+// 2. remaps the border character
+void InitializeGraphics(void) {
+	IO_VCTRL =  VCTRL_MODE_TILE | 
+				VCTRL_TEXT_PRIO |
+				VCTRL_SPR_EN | 
+				VCTRL_TEXT_EN | 
+				VCTRL_REMAP_BORDER_CH;
 }

@@ -15,13 +15,13 @@
  */
 
 /**
- * @file  next_palette_init.h
- * @brief ZX Spectrum Next X16 one time palette initialization functions.
+ * @file  cx16_init_images.h
+ * @brief Commander X16 one time image initialization functions.
  */
 
-#ifndef NEXT_PALETTE_INIT_H_
-#define NEXT_PALETTE_INIT_H_
+#ifndef CX16_INIT_IMAGES_H_
+#define CX16_INIT_IMAGES_H_
 
-void InitializePalette(void);
+void InitializeImages(void);
 
-#endif // NEXT_PALETTE_INIT_H_
+#endif // CX16_INIT_IMAGES_H_

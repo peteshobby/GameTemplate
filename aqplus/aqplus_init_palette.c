@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2025 Peter Brown
  *
@@ -15,13 +16,25 @@
  */
 
 /**
- * @file  aqplus_palette_init.h
+ * @file  aqplus_init_palette.c
  * @brief Aquarius+ one time palette initialization functions.
  */
 
-#ifndef AQPLUS_PALETTE_INIT_H_
-#define AQPLUS_PALETTE_INIT_H_
+#include "aqplus_init_palette.h"
+#include "constants.h"
+#include "palette.h"
 
-void InitializePalette(void);
+#include <aqplus.h>
 
-#endif // AQPLUS_PALETTE_INIT_H_
+void InitializePalette(void) {
+    for (uint8_t index = 0; index < MAX_PALETTE; ++index) {
+        uint8_t palette = index << 5;
+        for (uint8_t i = 0; i < 16; i++) {
+            uint8_t entry = (i << 1);
+            IO_VPALSEL  = palette + entry + PALETTE_GB;
+            IO_VPALDATA = palettes[index][i][0];
+            IO_VPALSEL  = palette + entry + PALETTE_R;
+            IO_VPALDATA = palettes[index][i][1];
+        }
+    }
+}

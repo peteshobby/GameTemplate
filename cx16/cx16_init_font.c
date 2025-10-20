@@ -15,13 +15,24 @@
  */
 
 /**
- * @file  next_image_init.h
- * @brief ZX Spectrum Next one time image initialization functions.
+ * @file  cx16_init_font.c
+ * @brief Commander X16 one time font initialization function.
  */
 
-#ifndef NEXT_IMAGE_INIT_H_
-#define NEXT_IMAGE_INIT_H_
+#include "cx16_init_font.h"
+#include "font.h"
 
-void InitializeImageData(void);
+#include <cx16.h>
+#include <stdint.h>
 
-#endif // NEXT_IMAGE_INIT_H_
+void InitializeFont(void) {
+    int i;
+    unsigned long tileBaseAddress = 0x01F000;
+    VERA.address = tileBaseAddress;
+    VERA.address_hi = tileBaseAddress>>16;
+    VERA.address_hi |= VERA_INC_1;
+
+    for (i = 0; i < FONT_SIZE; i++) {
+        VERA.data0 = font[i];
+    }
+}

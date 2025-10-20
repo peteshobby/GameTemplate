@@ -21,12 +21,12 @@
 
 #include "initialization.h"
 #include "aqplus_graphics.h"
-#include "aqplus_font_init.h"
-#include "aqplus_graphics_init.h"
-#include "aqplus_image_init.h"
-#include "aqplus_palette_init.h"
-#include "graphics.h"
+#include "aqplus_init_font.h"
+#include "aqplus_init_graphics.h"
+#include "aqplus_init_images.h"
+#include "aqplus_init_palette.h"
 #include "constants.h"
+#include "graphics.h"
 #include "text_color.h"
 
 #include <aqplus.h>
@@ -44,7 +44,7 @@ void InitializeSystem() {
 	InitializeGraphics();
 	InitializePalette();
 	InitializeFont();
-	InitializeImageData();
+	InitializeImages();
 
 	ClearTextScreen(BLACK);
 	SetBorder(BLACK);

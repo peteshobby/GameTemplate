@@ -15,13 +15,13 @@
  */
 
 /**
- * @file  aqplus_image_init.h
- * @brief Aquarius+ one time image initialization functions.
+ * @file  aqplus_init_palette.h
+ * @brief Aquarius+ one time palette initialization functions.
  */
 
-#ifndef AQPLUS_IMAGE_INIT_H_
-#define AQPLUS_IMAGE_INIT_H_
+#ifndef AQPLUS_INIT_PALETTE_H_
+#define AQPLUS_INIT_PALETTE_H_
 
-void InitializeImageData(void);
+void InitializePalette(void);
 
-#endif // AQPLUS_IMAGE_INIT_H_
+#endif // AQPLUS_INIT_PALETTE_H_

@@ -15,13 +15,13 @@
  */
 
 /**
- * @file  cx16_font_init.h
- * @brief Commander X16 one time font initialization function.
+ * @file  next_init_images.h
+ * @brief ZX Spectrum Next one time image initialization functions.
  */
 
-#ifndef CX16_FONT_INIT_H_
-#define CX16_FONT_INIT_H_
+#ifndef NEXT_INIT_IMAGES_H_
+#define NEXT_INIT_IMAGES_H_
 
-void InitializeFont(void);
+void InitializeImages(void);
 
-#endif // CX16_FONT_INIT_H_
+#endif // NEXT_INIT_IMAGES_H_

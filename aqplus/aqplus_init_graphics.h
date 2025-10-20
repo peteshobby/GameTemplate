@@ -15,23 +15,13 @@
  */
 
 /**
- * @file  aqplus_font_init.c
- * @brief Aquarius+ one time font initialization function.
+ * @file  aqplus_graphics_init.h
+ * @brief Aquarius+ one time graphics initialization functions.
  */
 
-#include "aqplus_font_init.h"
-#include "font.h"
+#ifndef AQPLUS_INIT_GRAPHICS_H_
+#define AQPLUS_INIT_GRAPHICS_H_
 
-#include <aqplus.h>
-#include <stdint.h>
+void InitializeGraphics(void);
 
-void InitializeFont(void) {
-    uint8_t *characterRam = (uint8_t *) 0xC000;
-    // Map UDC Ram (page 21) to $C000 (bank 3)
-    IO_BANK3 = 21;
-   
-    memcpy(characterRam, font, FONT_SIZE);
-
-	// Map bank 3 to VIDEO Ram
-    IO_BANK3 = 20;	
-}
+#endif // AQPLUS_INIT_GRAPHICS_H_

@@ -15,13 +15,14 @@
  */
 
 /**
- * @file  agon_image_init.h
- * @brief Agon Light one time image initialization functions.
+ * @file  next_init_graphics.h
+ * @brief ZX Spectrum Next one time graphics initialization functions.
  */
 
-#ifndef AGON_IMAGE_INIT_H_
-#define AGON_IMAGE_INIT_H_
+#ifndef NEXT_INIT_GRAPHICS_H_
+#define NEXT_INIT_GRAPHICS_H_
 
-void InitializeImageData(void);
+void EnableTurboMode(void);
+void InitializeGraphics(void);
 
-#endif // AGON_IMAGE_INIT_H_
+#endif // NEXT_INIT_GRAPHICS_H_

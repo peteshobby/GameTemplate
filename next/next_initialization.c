@@ -20,12 +20,12 @@
  */
 
  #include "initialization.h"
-#include "system_constants.h"
+#include "constants.h"
 #include "graphics.h"
 #include "joypad.h"
-#include "next_image_init.h"
-#include "next_graphics_init.h"
-#include "next_palette_init.h"
+#include "next_init_graphics.h"
+#include "next_init_images.h"
+#include "next_init_palette.h"
 #include "text_color.h"
 
 #include <arch/zxn.h>
@@ -49,7 +49,7 @@ void InitializeSystem(void) {
 	ZXN_WRITE_MMU6(INIT_BANK);
 	InitializeGraphics();
 	InitializePalette();
-	InitializeImageData();
+	InitializeImages();
 	ZXN_WRITE_MMU6(currentBank);
 
 	ClearTextScreen(TRANSPARENT);

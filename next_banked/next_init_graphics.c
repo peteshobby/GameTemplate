@@ -15,11 +15,11 @@
  */
 
 /**
- * @file  next_graphics_init.c
+ * @file  next_init_graphics.c
  * @brief ZX Spectrum Next one time graphics initialization functions.
  */
 
- #include "next_graphics_init.h"
+ #include "next_init_graphics.h"
 #include "system_constants.h"
 #include <arch/zxn.h>
 

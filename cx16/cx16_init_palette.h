@@ -15,25 +15,13 @@
  */
 
 /**
- * @file  agon_graphics_init.c
- * @brief Agon Light one time graphics initialization functions.
+ * @file  cx16_init_palette.h
+ * @brief Commander X16 one time palette initialization functions.
  */
 
-#include "agon_graphics_init.h"
-#include "graphics.h"
-#include <agon/vdp_vdu.h>
-#include <stdbool.h>
+#ifndef CX16_INIT_PALETTE_H_
+#define CX16_INIT_PALETTE_H_
 
-#define MODE_320_240_64		8
-#define DOUBLE_BUFFER		128
+void InitializePalette(void);
 
-void InitializeGraphics(void) {
-	vdp_mode(MODE_320_240_64 + DOUBLE_BUFFER);
-	
-// Hide cursor
-	vdp_cursor_enable( false );
-
-// Turn off screen scaling.
-	vdp_logical_scr_dims(false);
-	ClearTextScreen(0);
-}
+#endif // CX16_INIT_PALETTE_H_

@@ -15,27 +15,13 @@
  */
 
 /**
- * @file  agon_font_init.c
- * @brief Agon Light one time font initialization function.
+ * @file  next_init_palette.h
+ * @brief ZX Spectrum Next X16 one time palette initialization functions.
  */
 
-#include "agon_font_init.h"
-#include "font.h"
+#ifndef NEXT_INIT_PALETTE_H_
+#define NEXT_INIT_PALETTE_H_
 
-#include <agon/vdp_vdu.h>
-#include <stdint.h>
+void InitializePalette(void);
 
-void InitializeFont(void) {
-    uint16_t ch;
-    uint8_t data;
-
-    for (ch = 0; ch <= 255; ++ch) {
-        putch(23);
-        putch(0);
-        putch(0x90);
-        putch(ch);
-        for (data = 0; data < 8; ++data) {
-            putch(font[ch * 8 + data]);
-        }
-    }
-}
+#endif // NEXT_INIT_PALETTE_H_

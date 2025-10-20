@@ -15,24 +15,13 @@
  */
 
 /**
- * @file  aqplus_graphics_init.c
- * @brief Aquarius+ one time graphics initialization functions.
+ * @file  cx16_init_graphics.h
+ * @brief Commander X16 one time graphics initialization functions.
  */
 
-#include "graphics.h"
-#include "constants.h"
+#ifndef CX16_INIT_GRAPHICS_H_
+#define CX16_INIT_GRAPHICS_H_
 
-#include <aqplus.h>
+void InitializeGraphics(void);
 
-
-
-// This function:
-// 1. sets the layer priorities
-// 2. remaps the border character
-void InitializeGraphics(void) {
-	IO_VCTRL =  VCTRL_MODE_TILE | 
-				VCTRL_TEXT_PRIO |
-				VCTRL_SPR_EN | 
-				VCTRL_TEXT_EN | 
-				VCTRL_REMAP_BORDER_CH;
-}
+#endif // CX16_INIT_GRAPHICS_H_

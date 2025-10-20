@@ -15,15 +15,16 @@
  */
 
 /**
- * @file  cx16_graphics_init.c
+ * @file  cx16_init_graphics.c
  * @brief Commander X16 one time graphics initialization functions.
  */
 
-
-#include <cx16.h>
-#include "system_constants.h"
+#include "cx16_init_graphics.h"
+#include "constants.h"
 #include "graphics.h"
 #include "text_color.h"
+
+#include <cx16.h>
 
 
 // This function:

@@ -20,9 +20,9 @@
  */
 
 #include "initialization.h"
-#include "agon_graphics_init.h"
-#include "agon_font_init.h"
-#include "agon_image_init.h"
+#include "agon_init_graphics.h"
+#include "agon_init_font.h"
+#include "agon_init_images.h"
 
 #include <agon/vdp_vdu.h>
 #include <agon/vdp_key.h>
@@ -37,5 +37,5 @@ void InitializeSystem(void) {
 	InitializeAgon();
 	InitializeGraphics();
 	InitializeFont();
-	InitializeImageData();
+	InitializeImages();
 }

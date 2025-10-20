@@ -15,13 +15,13 @@
  */
 
 /**
- * @file  agon_graphics_init.h
- * @brief Agon Light one time graphics initialization functions.
+ * @file  agon_init_images.h
+ * @brief Agon Light one time image initialization functions.
  */
 
-#ifndef AGON_GRAPHICS_INIT_H_
-#define AGON_GRAPHICS_INIT_H_
+#ifndef AGON_INIT_IMAGES_H_
+#define AGON_INIT_IMAGES_H_
 
-void InitializeGraphics(void);
+void InitializeImages(void);
 
-#endif // AGON_GRAPHICS_INIT_H_
+#endif // AGON_INIT_IMAGES_H_
