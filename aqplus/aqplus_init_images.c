@@ -34,10 +34,10 @@ void InitializeSmallImages(void) {
     IO_BANK3 = 20;
     
      for (i = 0; i < MAX_SMALL_IMAGES; i++) { 
-        int imageBase = i * 32;
+        int sourceBase = i * 32;
 
         for (row = 0; row < 8; ++row) {
-            uint16_t imageBase1 = (imageBase + imageBase) + (row * 4);
+            uint16_t imageBase1 = (imageBase + sourceBase) + (row * 4);
 
             for (byte = 0; byte < 4; ++byte) {
                 imageRam[imageBase1 + byte] = smallImages[i][row][byte];

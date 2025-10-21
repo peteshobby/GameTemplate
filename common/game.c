@@ -20,18 +20,47 @@
  */
 
 #include "game.h"
+#include "constants.h"
 #include "frame_sync.h"
 #include "graphics.h"
+#include "images.h"
+#include "palette.h"
+#include "sprites.h"
 #include "text_color.h"
 
 bool gameQuit = false;
 
+
+void GameLoop(void) {
+	int16_t x = 0;
+	int16_t y = 0;
+	int16_t dx = 1;
+	int16_t dy = 1;
+
+	while(1) {
+		FrameSync();
+		Show1616Sprite(1, TILE_EXAMPLE_IMAGE_0, GRID_AND_ENEMIES, false, false, x, y);
+		x += dx;
+		y += dy;
+
+		if (x <= 0)
+			dx = 1;
+		if (x >= SCREEN_PIXEL_WIDTH - 15)
+			dx = -1;
+		if (y <= 0)
+			dy = 1;
+		if (y >= SCREEN_PIXEL_HEIGHT - 15)
+			dy = -1;
+
+	}
+}
+
 void PlayGame(void) {
-	ClearTextScreen(WHITE);
+	ClearTextScreen(TRANSPARENT);
 #ifdef DBLBUF
 	FrameSync();
-	ClearTextScreen(WHITE);
+	ClearTextScreen(TRANSPARENT);
 #endif // DBLBUF
 
-	while(1);
+	GameLoop();
  }

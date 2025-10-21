@@ -33,4 +33,8 @@
 #define SPACE_CHAR          0x20
 #define COPYRIGHT_CHAR      0x7E
 
+// Screen
+#define SCREEN_PIXEL_WIDTH		(SCREEN_WIDTH * 8)
+#define SCREEN_PIXEL_HEIGHT		(SCREEN_HEIGHT * 8)
+
 #endif // CONSTANTS_H_

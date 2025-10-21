@@ -15,26 +15,20 @@
  */
 
 /**
- * @file  palette.h
- * @brief Common palette definitions.
+ * @file  sprites.h
+ * @brief Sprite API.
  */
 
-#ifndef PALETTES_H_
-#define PALETTES_H_
+#ifndef SPRITES_H_
+#define SPRITES_H_
 
+#include <stdbool.h>
 #include <stdint.h>
 
-#define MAX_PALETTE			4
-#define PALETTE_ENTRIES		16
-#define PALETTE_BYTES		2
+void Show1616Sprite(uint8_t spriteIndex, uint8_t imageIndex, uint8_t palette, bool flipX, bool flipY, int16_t x, int16_t y);
+void Move1616Sprite(uint8_t spriteIndex, int16_t x, int16_t y);
+void Hide1616Sprite(uint8_t spriteIndex);
+void Show88Sprite(uint8_t spriteIndex, uint8_t imageIndex, uint8_t palette, bool flipX, bool flipY, int16_t x, int16_t y);
+void Hide88Sprite(uint8_t spriteIndex);
 
-extern const uint8_t palettes[MAX_PALETTE][PALETTE_ENTRIES][PALETTE_BYTES];
-
-// Palette name constants.
-// TODO enum
-#define TEXT_PALETTE	0
-#define PLAYER_AND_SHOTS	1
-#define GRID_AND_ENEMIES	2
-#define MORE_ENEMIES	3
-
-#endif // PALETTES_H_
+#endif // SPRITES_H_

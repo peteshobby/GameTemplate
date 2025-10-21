@@ -65,3 +65,5 @@ void InitializeGraphics(void) {
     EnableLayer2();
 	SetGlobalTransparency();
 }
+
+// TODO fix sprite over border

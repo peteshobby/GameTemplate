@@ -33,7 +33,14 @@
 #define TEXT_LAYER          layer1
 #define TILE_LAYER          layer0
 
+// Sprites
 #define ENABLE_SPRITES		64
+#define SPRITE16X16     	0b01010000
+#define SPRITE_FLIP_H   	0b0000001
+#define SPRITE_FLIP_V   	0b0000010
+#define HFLIP               1
+#define VFLIP               2  
+#define MAX_SPRITE_X        0x3FF
 
 // Colors
 #define COLOR(fore, back)	((back << 4) | fore) 
