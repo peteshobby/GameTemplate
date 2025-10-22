@@ -29,6 +29,7 @@
 #define DOUBLE_BUFFER		128
 
 void InitializeGraphics(void) {
+	//vdp_mode(MODE_320_240_64);
 	vdp_mode(MODE_320_240_64 + DOUBLE_BUFFER);
 	
 // Hide cursor

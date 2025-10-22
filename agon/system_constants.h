@@ -29,10 +29,12 @@
 #define RGBA2222            1
 #define IMAGE_BM_BASE       2000
 
+// Sprites
+#define MAX_SPRITE			50
 
 // Screen info
 #define SCREEN_WIDTH        40
-#define SCREEN_HEIGHT       28
+#define SCREEN_HEIGHT       30
 
 // Start message
 #define START_MESSAGE		"Press FIRE to play"

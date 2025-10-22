@@ -25,13 +25,29 @@
 #include "large_image_data.h"
 #include "small_image_data.h"
 #include "vdp_functions.h"
+#include "agon_text_palette.h"
+
+void ExpandImage(uint8_t *source, uint8_t *dest, uint8_t size) {
+	int srcIndex;
+
+	for(srcIndex = 0; srcIndex < size; ++srcIndex) {
+		int dstIndex = srcIndex * 2;
+		uint8_t left = source[srcIndex] >> 4;
+		uint8_t right = source[srcIndex] & 0x0F;
+
+		dest[dstIndex] = agonTextPalette[left] | 0b11000000;
+		dest[dstIndex + 1] = agonTextPalette[right] | 0b11000000;
+	}
+}
 
  void InitializeSmallImages(void) {
+    uint8_t buffer[64];
     for (int i = 0; i < MAX_SMALL_IMAGES; ++i) {
         uint16_t bufferId = IMAGE_BM_BASE + MAX_LARGE_IMAGES + i;
 
+        ExpandImage((uint8_t *)&smallImages[i], (uint8_t *)&buffer, 32);
         ClearBuffer(bufferId);
-        WriteBuffer(bufferId, 8, 8, &smallImage[i * 64]);
+        WriteBuffer(bufferId, 8, 8, (uint8_t *)&buffer);
         SelectBitmap(bufferId);
         CreateBitmap(8, 8, RGBA2222);
     }
@@ -39,11 +55,13 @@
 }
 
 void InitializeLargeImages(void) {
+    uint8_t buffer[256];
     for (int i = 0; i < MAX_LARGE_IMAGES; ++i) {
         uint16_t bufferId = IMAGE_BM_BASE + i;
 
+        ExpandImage((uint8_t *)&largeImages[i], (uint8_t *)&buffer, 128);            
         ClearBuffer(bufferId);
-        WriteBuffer(bufferId, 16, 16, &largeImage[i * 256]);
+        WriteBuffer(bufferId, 16, 16, (uint8_t *)&buffer);
         SelectBitmap(bufferId);
         CreateBitmap(16, 16, RGBA2222);
     }
