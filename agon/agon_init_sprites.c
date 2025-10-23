@@ -76,15 +76,15 @@ void TestSprite(void) {
 			dy = 1;
 		if (y >= SCREEN_PIXEL_HEIGHT - 15)
 			dy = -1;
-
 	}
 }
 
+// Note: Hardware sprites do not work correctly in the emulator with a double
+// buffered screen.
 void InitializeSprites(void) {
 	EnableHardwareSprites();
 	LoadSpriteFrames();
 	ClearTextScreen(CYAN);
 	//TestSprite();
 	ActivateSprites(MAX_SPRITE);
-
 }
