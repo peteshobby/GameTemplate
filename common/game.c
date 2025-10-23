@@ -24,6 +24,7 @@
 #include "frame_sync.h"
 #include "graphics.h"
 #include "images.h"
+#include "overlay.h"
 #include "palette.h"
 #include "sprites.h"
 #include "text_color.h"
@@ -37,8 +38,10 @@ void GameLoop(void) {
 	int16_t dx = 1;
 	int16_t dy = 1;
 
+	SetupOverlay();
 	while(1) {
 		FrameSync();
+		UpdateOverlay();
 		Show1616Sprite(1, TILE_EXAMPLE_IMAGE_0, GRID_AND_ENEMIES, false, false, x, y);
 		x += dx;
 		y += dy;
