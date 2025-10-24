@@ -19,7 +19,7 @@
  * @brief ZX Spectrum Next one time graphics initialization functions.
  */
 
- #include "next_init_graphics.h"
+#include "next_init_graphics.h"
 #include "system_constants.h"
 #include <arch/zxn.h>
 
@@ -28,15 +28,11 @@
 
 // Sets layer order to layer 2 on top, then sprites, then tilemap
 void SetLayerPriority(void) {
-	ZXN_NEXTREGA(REG_VIDEO_PARAM, 
+	ZXN_NEXTREGA(0x15, 
 		RSLS_LAYER_PRIORITY_LSU | 
 		RSLS_SPRITES_OVER_BORDER |
 		RSLS_SPRITES_VISIBLE);
 }
-
-
-
-
 
 void EnableLayer2(void) {
 // Enable layer 2 
@@ -49,9 +45,9 @@ void EnableLayer2(void) {
 // Set layer 2 clip region to the whole of the visible screen
     ZXN_NEXTREGA(REG_CLIP_WINDOW_CONTROL, RCWC_RESET_LAYER_2_CLIP_INDEX);
     ZXN_NEXTREGA(REG_CLIP_WINDOW_LAYER_2, 0);
-    ZXN_NEXTREGA(REG_CLIP_WINDOW_LAYER_2, LAYER_2_CLIP_WIDTH);
+    ZXN_NEXTREGA(REG_CLIP_WINDOW_LAYER_2, CLIP_WIDTH);
     ZXN_NEXTREGA(REG_CLIP_WINDOW_LAYER_2, 0);
-    ZXN_NEXTREGA(REG_CLIP_WINDOW_LAYER_2, LAYER_2_CLIP_HEIGHT);
+    ZXN_NEXTREGA(REG_CLIP_WINDOW_LAYER_2, CLIP_HEIGHT);
 }
 
 // Sets the 
