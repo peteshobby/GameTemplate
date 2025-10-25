@@ -28,7 +28,7 @@
 
 // Sets layer order to layer 2 on top, then sprites, then tilemap
 void SetLayerPriority(void) {
-	ZXN_NEXTREGA(0x15, 
+	ZXN_NEXTREGA(REG_SPRITE_LAYER_SYSTEM, 
 		RSLS_LAYER_PRIORITY_LSU | 
 		RSLS_SPRITES_OVER_BORDER |
 		RSLS_SPRITES_VISIBLE);
