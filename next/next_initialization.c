@@ -26,6 +26,7 @@
 #include "next_init_graphics.h"
 #include "next_init_images.h"
 #include "next_init_palette.h"
+#include "next_init_tilemap.h"
 #include "text_color.h"
 
 #include <arch/zxn.h>
@@ -50,6 +51,7 @@ void InitializeSystem(void) {
 	InitializeGraphics();
 	InitializePalette();
 	InitializeImages();
+	InitializeTilemap();
 	ZXN_WRITE_MMU6(currentBank);
 
 	ClearTextScreen(TRANSPARENT);

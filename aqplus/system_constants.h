@@ -23,16 +23,22 @@
 #define SYSTEM_CONSTANTS_H_
 
 // Graphics
+#define TILEMAP_RAM             0xC000
 #define IMAGERAM				0xD000
 #define SPRITE_BASE     		0x0080
 
 #define COLOR(fore, back)       ((fore << 4) | back)
 
+#define SwitchToVideoRam()      IO_BANK3 = 20
+
 // Screen
 #define SCREEN_WIDTH			40
 #define SCREEN_HEIGHT			25
 
-
+// Tilemap
+#define TILEMAP_HEIGHT          32
+#define TILEMAP_WIDTH           64
+#define TILE_PALETTE            (0x2000)
 // Text RAM 
 #define CHARRAM             	0x3000
 #define COLRRAM             	0x3400

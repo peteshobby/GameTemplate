@@ -65,3 +65,8 @@ void ClearTextScreen(uint8_t backgroundColor) {
     VERA.display.fxctrl = 0b00000000;
 
 }
+
+void ScrollTilemap(int16_t x, int16_t y) {
+    VERA.TILE_LAYER.hscroll = x;
+    VERA.TILE_LAYER.vscroll = y;
+}

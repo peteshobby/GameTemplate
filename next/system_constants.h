@@ -31,6 +31,17 @@
 
 #define GLOBAL_TRANSPARENT		0xC3
 
+// Tile Map
+#define START_OF_BANK_5		                0x4000
+#define TILEMAP_RAM	                        0x6000
+#define TILE_RAM		                    0x6A00	
+#define TILEDEF_SIZE                        32
+#define OFFSET_OF_MAP		                0x20 // ((START_OF_TILEMAP - START_OF_BANK_5) >> 8)
+#define OFFSET_OF_TILES		                0x2A // ((START_OF_TILES - START_OF_BANK_5) >> 8)
+
+#define TILEMAP_WIDTH                       40
+#define TILEMAP_HEIGHT                      32
+
 // Color
 #define COLOR(fore, back)       (((back << 4) | fore) & 0xFF) 
 

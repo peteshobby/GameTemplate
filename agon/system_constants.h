@@ -32,6 +32,10 @@
 // Sprites
 #define MAX_SPRITE			50
 
+// Tilemap
+#define TILEMAP_WIDTH       64
+#define TILEMAP_HEIGHT      32
+
 // Screen info
 #define SCREEN_WIDTH        40
 #define SCREEN_HEIGHT       30

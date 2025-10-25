@@ -15,16 +15,13 @@
  */
 
 /**
- * @file  graphics.h
- * @brief Graphics API.
+ * @file  cx16_init_tilemap.h
+ * @brief Commander X16 one time tilemap initialization functions.
  */
 
- #ifndef GRAPHICS_H_
-#define GRAPHICS_H_
+#ifndef CX16_INIT_TILEMAP_H_
+#define CX16_INIT_TILEMAP_H_
 
-#include <stdint.h>
+void InitializeTilemap(void);
 
-void ClearTextScreen(uint8_t backgroundColor);
-void ScrollTilemap(int16_t x, int16_t y);
-
-#endif // GRAPHICS_H_
+#endif // CX16_INIT_TILEMAP_H_

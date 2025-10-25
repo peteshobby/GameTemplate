@@ -80,3 +80,13 @@ void ClearTextScreen(uint8_t backgroundColor) {
     ZXN_WRITE_MMU7(currentBank2);
 }
 
+void ScrollTilemap(int16_t x, int16_t y) {
+    if (x < 0)
+        x = 320 + x;
+    if (y < 0)
+        y = 256 + y;
+
+    ZXN_NEXTREGA(0x31, y);
+    ZXN_NEXTREGA(0x30, x & 0xFF);
+    ZXN_NEXTREGA(0x2F, x >> 8);
+}

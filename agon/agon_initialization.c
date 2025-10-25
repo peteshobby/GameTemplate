@@ -24,6 +24,7 @@
 #include "agon_init_font.h"
 #include "agon_init_images.h"
 #include "agon_init_sprites.h"
+#include "agon_init_tilemap.h"
 
 #include <agon/vdp_vdu.h>
 #include <agon/vdp_key.h>
@@ -40,4 +41,5 @@ void InitializeSystem(void) {
 	InitializeFont();
 	InitializeImages();
 	InitializeSprites();
+	InitializeTilemap();
 }

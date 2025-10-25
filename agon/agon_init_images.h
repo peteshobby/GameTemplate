@@ -22,6 +22,9 @@
 #ifndef AGON_INIT_IMAGES_H_
 #define AGON_INIT_IMAGES_H_
 
+#include <stdint.h>
+
 void InitializeImages(void);
+void ExpandImage(uint8_t *source, uint8_t *dest, uint8_t size);
 
 #endif // AGON_INIT_IMAGES_H_

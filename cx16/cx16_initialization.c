@@ -25,6 +25,7 @@
 #include "cx16_init_graphics.h"
 #include "cx16_init_images.h"
 #include "cx16_init_palette.h"
+#include "cx16_init_tilemap.h"
 #include "graphics.h"
 #include "text_color.h"
 
@@ -33,6 +34,7 @@ void InitializeSystem() {
 	InitializePalette();
 	InitializeFont();
 	InitializeImages();
+	InitializeTilemap();
 
 	ClearTextScreen(BLACK);
 }

@@ -22,6 +22,8 @@
 #include "graphics.h"
 #include "constants.h"
 
+#include <aqplus.h>
+
 static uint8_t  *textRam     = (uint8_t *)  CHARRAM;
 static uint8_t  *colorRam    = (uint8_t *)  COLRRAM;
 
@@ -71,4 +73,11 @@ void SetBorder(uint8_t color) {
 // It also sets the border to the same color.
 void ClearTextScreen(uint8_t backgroundColor) {
 	ClearScreen(COLOR(0, backgroundColor));
+}
+
+void ScrollTilemap(int16_t x, int16_t y) {
+    IO_VSCRY = y & 0x00FF;
+    IO_VSCRX_L = x & 0xFF;
+    IO_VSCRX_H = x >> 8;
+    SwitchToVideoRam(); // Seems to be a bug that requires switching the bank back to video.
 }

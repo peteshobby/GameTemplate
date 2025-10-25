@@ -15,16 +15,13 @@
  */
 
 /**
- * @file  graphics.h
- * @brief Graphics API.
+ * @file  next_init_tilemap.h
+ * @brief ZX Spectrum Next one time tilemap initialization functions.
  */
 
- #ifndef GRAPHICS_H_
-#define GRAPHICS_H_
+#ifndef NEXT_INIT_TILEMAP_H_
+#define NEXT_INIT_TILEMAP_H_
 
-#include <stdint.h>
+void InitializeTilemap(void);
 
-void ClearTextScreen(uint8_t backgroundColor);
-void ScrollTilemap(int16_t x, int16_t y);
-
-#endif // GRAPHICS_H_
+#endif // NEXT_INIT_TILEMAP_H_

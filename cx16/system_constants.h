@@ -42,6 +42,14 @@
 #define VFLIP               2  
 #define MAX_SPRITE_X        0x3FF
 
+// Tilemap
+#define TILESET_BASE        0x00000
+#define TILESET_SIZE        128
+#define TILEMAP_BASE        0x04000 
+#define TILEMAP_WIDTH       64
+#define TILEMAP_HEIGHT      64
+#define TILE_16x16          0b00000011
+
 // Colors
 #define COLOR(fore, back)	((back << 4) | fore) 
 

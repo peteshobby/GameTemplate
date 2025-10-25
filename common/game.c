@@ -37,7 +37,8 @@ void GameLoop(void) {
 	int16_t y = 0;
 	int16_t dx = 1;
 	int16_t dy = 1;
-
+	int16_t sx = 0;
+	int16_t sy = 0;
 	SetupOverlay();
 #ifdef DBLBUF
 	FrameSync();
@@ -46,8 +47,9 @@ void GameLoop(void) {
 
 	while(1) {
 		FrameSync();
+		Show1616Sprite(1, TILE_EXAMPLE_IMAGE_3, GRID_AND_ENEMIES, false, false, x, y);
+		ScrollTilemap(++sx, sy);
 		UpdateOverlay();
-		Show1616Sprite(1, TILE_EXAMPLE_IMAGE_0, GRID_AND_ENEMIES, false, false, x, y);
 		x += dx;
 		y += dy;
 

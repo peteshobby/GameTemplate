@@ -35,9 +35,9 @@ void ExpandImage(uint8_t *source, uint8_t *dest, uint8_t size) {
 		uint8_t left = source[srcIndex] >> 4;
 		uint8_t right = source[srcIndex] & 0x0F;
 
-		dest[dstIndex] = agonTextPalette[left] | 0b11000000;
-		dest[dstIndex + 1] = agonTextPalette[right] | 0b11000000;
-	}
+		dest[dstIndex] = agonTextPalette[left];
+		dest[dstIndex + 1] = agonTextPalette[right];
+    }
 }
 
  void InitializeSmallImages(void) {

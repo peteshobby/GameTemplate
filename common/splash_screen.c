@@ -35,9 +35,9 @@ void ShowColors(void) {
 	uint8_t row;
 	uint8_t column;
 
-	for (row = 0; row < MAX_TEXT_COLOR; ++row) {
+	for (row = 1; row < MAX_TEXT_COLOR; ++row) {
 		for (column = 0; column < SCREEN_WIDTH; ++column)
-			DisplayChar(row, column, ' ', COLOR(row, row));
+			DisplayChar(row, column, '@', COLOR(WHITE, row));
 	}
 }
 
