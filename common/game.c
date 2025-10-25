@@ -39,6 +39,11 @@ void GameLoop(void) {
 	int16_t dy = 1;
 
 	SetupOverlay();
+#ifdef DBLBUF
+	FrameSync();
+	SetupOverlay();
+#endif // DBLBUF
+
 	while(1) {
 		FrameSync();
 		UpdateOverlay();

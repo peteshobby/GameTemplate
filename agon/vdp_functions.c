@@ -45,14 +45,6 @@ void EnableScrollProtection(void) {
     putch(16);
     putch(1);
     putch(255);
-    putch(0);
-    putch(0);
-    putch(0);
-    putch(0);
-    putch(0);
-    putch(0);
-    
-    vdp_cursor_behaviour(1, 255);
 }
 
 // Buffer functions

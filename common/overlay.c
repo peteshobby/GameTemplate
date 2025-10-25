@@ -24,18 +24,18 @@
 #include "text_color.h"
 #include "text_utilities.h"
 
-const char *emptyLine = "                                        ";
+const char *emptyLine = "                                      ";
 void SetupOverlay(void) {
 	int row;
 
-	DisplayText(0, 0, emptyLine, COLOR(WHITE, PURPLE));
-	DisplayText(1, 0, emptyLine, COLOR(WHITE, PURPLE));
+	DisplayText(0, 1, emptyLine, COLOR(WHITE, PURPLE));
+	DisplayText(1, 1, emptyLine, COLOR(WHITE, PURPLE));
 	DisplayCenteredText(0, "Text Overlay", COLOR(WHITE, PURPLE));
 
-	DisplayText(SCREEN_HEIGHT - 1, 0, emptyLine, COLOR(WHITE, PURPLE));
-	DisplayText(SCREEN_HEIGHT - 2, 0, emptyLine, COLOR(WHITE, PURPLE));
+	DisplayText(SCREEN_HEIGHT - 1, 1, emptyLine, COLOR(WHITE, PURPLE));
+	DisplayText(SCREEN_HEIGHT - 2, 1, emptyLine, COLOR(WHITE, PURPLE));
 
-	for (row = 2; row < SCREEN_HEIGHT - 2; ++row) {
+	for (row = 0; row <= SCREEN_HEIGHT - 1 ; ++row) {
 		DisplayText(row, 0, "  ", COLOR(WHITE, PURPLE));
 		DisplayText(row, SCREEN_WIDTH - 2, "  ", COLOR(WHITE, PURPLE));
 	}
@@ -43,6 +43,6 @@ void SetupOverlay(void) {
 
 void UpdateOverlay(void) {
 #ifdef DBLBUF
-	SetupOverlay();
+	FrameSync();
 #endif // DBLBUF
 }

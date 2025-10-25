@@ -20,7 +20,12 @@
  */
 
 #include "agon_init_graphics.h"
+#include "constants.h"
+#include "frame_sync.h"
 #include "graphics.h"
+#include "text_color.h"
+#include "text_utilities.h"
+#include "vdp_functions.h"
 
 #include <agon/vdp_vdu.h>
 #include <stdbool.h>
@@ -37,5 +42,7 @@ void InitializeGraphics(void) {
 
 // Turn off screen scaling.
 	vdp_logical_scr_dims(false);
+	EnableScrollProtection();
 	ClearTextScreen(0);
+
 }
