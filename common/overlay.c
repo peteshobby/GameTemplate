@@ -42,7 +42,5 @@ void SetupOverlay(void) {
 }
 
 void UpdateOverlay(void) {
-#ifdef DBLBUF
-	FrameSync();
-#endif // DBLBUF
+
 }
