@@ -30,8 +30,8 @@
 
 
 void DisplayChar(uint8_t row, uint8_t column, char ch, uint8_t color) {
-	vdp_set_text_colour(agonTextPalette[color & 0x0F]);
-	vdp_set_text_colour(128 + agonTextPalette[color >> 4]);
+	vdp_set_text_colour(agonTextPalette[color & 0x0F] & ALPHA_MASK);
+	vdp_set_text_colour(128 + (agonTextPalette[color >> 4] & ALPHA_MASK));
 	
 	//vdp_cursor_tab row and column are reversed from the function definition.
 	vdp_cursor_tab(column, row);
@@ -42,8 +42,8 @@ void DisplayChar(uint8_t row, uint8_t column, char ch, uint8_t color) {
 
 
 void DisplayText(uint8_t row, uint8_t column, const char* text, uint8_t color) {
-	vdp_set_text_colour(agonTextPalette[color & 0x0F]);
-	vdp_set_text_colour(128 + agonTextPalette[color >> 4]);
+	vdp_set_text_colour(agonTextPalette[color & 0x0F] & ALPHA_MASK);
+	vdp_set_text_colour(128 + (agonTextPalette[color >> 4] & ALPHA_MASK));
 	
 	//vdp_cursor_tab row and column are reversed from the function definition.
 	vdp_cursor_tab(column, row);

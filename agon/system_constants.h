@@ -29,6 +29,9 @@
 #define RGBA2222            1
 #define IMAGE_BM_BASE       2000
 
+#define ALPHA 				0b11000000
+#define ALPHA_MASK			0b00111111
+
 // Sprites
 #define MAX_SPRITE			50
 

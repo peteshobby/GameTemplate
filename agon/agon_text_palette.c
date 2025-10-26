@@ -20,9 +20,9 @@
  */
 
 #include "agon_text_palette.h"
+#include "constants.h"
 #include "palette.h"
 
-#define ALPHA 0b11000000
 
 uint8_t agonTextPalette[PALETTE_ENTRIES] = { 
 	0, 
