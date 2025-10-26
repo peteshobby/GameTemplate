@@ -41,7 +41,12 @@
 
 // Screen info
 #define SCREEN_WIDTH        40
-#define SCREEN_HEIGHT       30
+#define SCREEN_HEIGHT       25
+
+// Screen modes
+#define MODE_320_240_64		8
+#define MODE_320_200_64		12
+#define DOUBLE_BUFFER		128
 
 // Start message
 #define START_MESSAGE		"Press FIRE to play"
