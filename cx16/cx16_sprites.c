@@ -31,9 +31,9 @@ void Show1616Sprite(uint8_t spriteIndex, uint8_t imageIndex, uint8_t palette, bo
     uint8_t flip = 0;
 
     if (x < 0)
-        x = MAX_SPRITE_X - x;
-    if (x > MAX_SPRITE_X)   
-        x -= MAX_SPRITE_X;
+        x = REAL_MAX_SPRITE_X - x;
+    if (x > REAL_MAX_SPRITE_X)   
+        x -= REAL_MAX_SPRITE_X;
 
     if (flipH)
         flip |= SPRITE_FLIP_H;

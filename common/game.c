@@ -33,8 +33,8 @@ bool gameQuit = false;
 
 
 void GameLoop(void) {
-	int16_t x = 0;
-	int16_t y = 0;
+	int16_t x = MIN_SPRITE_X;
+	int16_t y = MIN_SPRITE_Y;
 	int16_t dx = 1;
 	int16_t dy = 1;
 	int16_t sx = 0;
@@ -53,13 +53,13 @@ void GameLoop(void) {
 		x += dx;
 		y += dy;
 
-		if (x <= 0)
+		if (x <= MIN_SPRITE_X)
 			dx = 1;
-		if (x >= SCREEN_PIXEL_WIDTH - 15)
+		if (x >= MAX_SPRITE_X - 15)
 			dx = -1;
-		if (y <= 0)
+		if (y <= MIN_SPRITE_Y)
 			dy = 1;
-		if (y >= SCREEN_PIXEL_HEIGHT - 15)
+		if (y >= MAX_SPRITE_Y - 15)
 			dy = -1;
 
 	}

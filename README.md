@@ -35,6 +35,20 @@ the appropriate places in memory on initialization. This simplifies the process
 of coverting the sprite sheet into a C array in as far as I only have to do it
 once whenever I change or add graphics.
 
+### Text overlay
+
+The template uses a text overlay for showing the score and other information.
+The Agon Light does not currently have the capability to provide a real
+text overlay so we have to redraw the text layer on every refresh. This is
+a relatively slow process. To mitigate this the template uses the Agon's
+double buffered screen mode for the Agon and the text overlay is limited to as
+few lines as possible. Even with this games will run noticably slower on the
+Agon compared to the other systems.
+Also because it is not a real overlay sprites will always appear above it.
+The template hides this by limiting the area of the screen the sprites appear
+in.
+The other systems do all have a real text overlay capability.
+
 ## Configured Capabilities
 
 ### Agon Light

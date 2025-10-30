@@ -43,6 +43,11 @@
 #define SCREEN_WIDTH        40
 #define SCREEN_HEIGHT       25
 
+#define MIN_SPRITE_X		0
+#define MAX_SPRITE_X		(SCREEN_WIDTH * 8)
+#define MIN_SPRITE_Y		16
+#define MAX_SPRITE_Y		((SCREEN_HEIGHT - 2) * 8)
+
 // Screen modes
 #define MODE_320_240_64		8
 #define MODE_320_200_64		12

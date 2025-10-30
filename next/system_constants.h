@@ -55,6 +55,11 @@
 #define SCREEN_WIDTH        	40
 #define SCREEN_HEIGHT       	32
 
+#define MIN_SPRITE_X		0
+#define MAX_SPRITE_X		(SCREEN_WIDTH * 8)
+#define MIN_SPRITE_Y		0
+#define MAX_SPRITE_Y		(SCREEN_HEIGHT * 8)
+
 // Start message
 #define START_MESSAGE		"Press FIRE to play"
 

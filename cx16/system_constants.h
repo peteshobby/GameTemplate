@@ -40,7 +40,9 @@
 #define SPRITE_FLIP_V   	0b0000010
 #define HFLIP               1
 #define VFLIP               2  
-#define MAX_SPRITE_X        0x3FF
+#define REAL_MAX_SPRITE_X   0x3FF
+
+
 
 // Tilemap
 #define TILESET_BASE        0x00000
@@ -56,6 +58,11 @@
 // Screen
 #define SCREEN_WIDTH		40
 #define SCREEN_HEIGHT		30
+
+#define MIN_SPRITE_X		0
+#define MAX_SPRITE_X		(SCREEN_WIDTH * 8)
+#define MIN_SPRITE_Y		0
+#define MAX_SPRITE_Y		(SCREEN_HEIGHT * 8)
 
 // Tile map size
 #define MAX_TILE_ROW    64
