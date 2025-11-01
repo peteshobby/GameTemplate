@@ -25,6 +25,8 @@ ARG_X       =   9
 ARG_CHAR    =   10
 ARG_COLOR   =   11
 
+PAGE        =   0x57
+OFFSET      =   0xE0
 
 fgColor:    defb    0
 bgColor:    defb    0
@@ -36,7 +38,7 @@ _DisplayChar:
     push	bc
 	push	de
 	push 	hl
-
+    
 ; Store colors
     ld      hl, ARG_COLOR
     add     hl, sp
@@ -105,9 +107,17 @@ _DisplayChar:
     sla     a
     ld      (yOffset), a
 ; Set page
+    push    bc
+    ld      bc, 0x243B
+    ld      a, PAGE
+    out     (c), a
+    ld      bc, 0x253B
+    in      a, (c)
+    pop     bc
+    push    af
     ld      a, b
     add     a, 18
-    NEXTREG 0x56, a
+    NEXTREG PAGE, a
 
     ld      a, 8
     ld      b, a
@@ -124,7 +134,7 @@ draw_char_loop:
     ld      a, (yOffset)
     ld      l, a
     ld      a, (xOffset)
-    add     a, 0xC0
+    add     a, OFFSET
     ld      h, a
 
 ; bit 1
@@ -206,14 +216,14 @@ bit_8_foreground:
 bit_8_set:
 
 
-
     ld      a, (yOffset)
     inc     a
     ld      (yOffset), a
     djnz    draw_char_loop
 DisplayColorChar_end:
-    ld      a, 0
-    NEXTREG 0x56, a
+    pop     af
+    NEXTREG PAGE, a
+    
     pop		hl
 	pop		de
 	pop		bc
