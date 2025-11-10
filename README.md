@@ -22,32 +22,31 @@ graph TD;
 ## Initialization
 
 Each system is initialize to run as fast as possible and to provide roughly
-similar capabilities. The initialiation code is split between one function per
-platform that calls several other platform specific functions. It is arranged
-this was to all for all the initailation code in those sub-functions to be
-moved to a bank to make more memory available to the main game code if
-necessary.
+similar capabilities.
+
+The project declares one initialization function and each platform defines its own version of that function.
+The initalization functions call several sub-functions than initialize different components.
+
+One of theb reasons it is arranged this way is to make it easier to move those sub-functions to banked memory to leave space for the main game code.
 
 ### Sprites and Tiles
 
-I keep both sprite and tile graphics data in the same arrays and copy them to
-the appropriate places in memory on initialization. This simplifies the process
-of coverting the sprite sheet into a C array in as far as I only have to do it
-once whenever I change or add graphics.
+Both sprite and tile graphic data are defined in the same array and copied to the appropriate places in memory on initialization.
 
 ### Text overlay
 
 The template uses a text overlay for showing the score and other information.
-The Agon Light does not currently have the capability to provide a real
-text overlay so we have to redraw the text layer on every refresh. This is
-a relatively slow process. To mitigate this the template uses the Agon's
-double buffered screen mode for the Agon and the text overlay is limited to as
-few lines as possible. Even with this games will run noticably slower on the
+
+The Agon Light does not currently have the capability to provide a real text overlay so it has to be redrawn on every refresh. This is a relatively slow process. To mitigate this the text overlay is limited to as few lines as possible and the template uses the Agon's
+double buffered screen mode to hide frame drops.
+
+Even with this games will run noticably slower on the
 Agon compared to the other systems.
 Also because it is not a real overlay sprites will always appear above it.
 The template hides this by limiting the area of the screen the sprites appear
 in.
-The other systems do all have a real text overlay capability.
+
+All the other systems have a real text overlay capability.
 
 ## Configured Capabilities
 
