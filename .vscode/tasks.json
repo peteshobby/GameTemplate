@@ -1,0 +1,184 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Agon Build",
+			"type": "shell",
+			"command": "C:/agdev/bin/make -f Makefile.agon V=1",
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "Agon Emulator",
+			"type": "shell",
+			"command": "C:/agdev/bin/make -f Makefile.agon run_emu",
+			"problemMatcher": [],
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "Aquarius+ Build",
+			"type": "shell",
+			"command": "make -f Makefile.aqplus",
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "Aquarius+ Emulator",
+			"type": "shell",
+			"command": "make -f Makefile.aqplus run_emu",
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "Aquarius+ Hardware",
+			"type": "shell",
+			"command": "make -f Makefile.aqplus run_aqp",
+			"group": {
+				"kind": "build",
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "CX16 Build",
+			"type": "shell",
+			"command": "make -f Makefile.cx16",
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "CX16 Emulator",
+			"type": "shell",
+			"command": "make -f Makefile.cx16 run_emu",
+			"group": {
+				"kind": "build",
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "Next Build",
+			"type": "shell",
+			"command": "make -f Makefile.next",
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "Next Emulator",
+			"type": "shell",
+			"command": "make -f Makefile.next run_emu",
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "Clean All",
+			"type": "shell",
+			"command": "make -f Makefile clean",
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		},
+		{
+			"label": "Build All",
+			"type": "shell",
+			"command": "make -f Makefile",
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"revealProblems": "onProblem",
+				"focus": false,
+				"panel": "dedicated",
+				"clear": true
+			}
+		}
+	]
+}
