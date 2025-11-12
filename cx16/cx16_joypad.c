@@ -57,9 +57,9 @@ void InitializeJoypad(void) {
 uint16_t ReadJoypad1() {
     asm("lda #0");
     asm("jsr $FF56");
-    asm("STA %v", joy1A);
-    asm("STX %v", joy1X);
-    asm("STY %v", joy1Y);
+    asm("sta %v", joy1A);
+    asm("stx %v", joy1X);
+    asm("sty %v", joy1Y);
 
     return (joy1A << 8) | joy1X;
 }
@@ -67,9 +67,9 @@ uint16_t ReadJoypad1() {
 uint16_t ReadJoypad2() {
     asm("lda #1");
     asm("jsr $FF56");
-    asm("STA %v", joy2A);
-    asm("STX %v", joy2X);
-    asm("STY %v", joy2Y);
+    asm("sta %v", joy2A);
+    asm("stx %v", joy2X);
+    asm("sty %v", joy2Y);
 
     return (joy2A << 8) | joy2X;
 }
