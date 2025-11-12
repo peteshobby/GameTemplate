@@ -1,3 +1,3 @@
-# Agon Light
+# Agon Light 2
 
 ## Initialzation

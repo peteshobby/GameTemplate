@@ -22,7 +22,7 @@ graph TD;
 ## Initialization
 
 Each system is initialize to run as fast as possible and to provide roughly
-similar capabilities.
+similar [capabilities](#configured-capabilities).
 
 The project declares one initialization function and each platform defines its own version of that function.
 The initalization functions call several sub-functions than initialize different components.
@@ -47,6 +47,18 @@ The template hides this by limiting the area of the screen the sprites appear
 in.
 
 All the other systems have a real text overlay capability.
+
+## Splash Screen
+The splash screen is shown once immediately after the game loads.
+
+Its purpose is to dispplay copyright and contact information and as a place to troubleshoot any
+installation issues.
+
+## Attract Screen
+The attract screen is show after the splash screen and
+in between games. It show the instructions for playing the game.
+
+## The Game Loop
 
 ## Configured Capabilities
 
