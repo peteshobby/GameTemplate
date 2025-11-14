@@ -1,3 +1,0 @@
-# ZX Spectrum Next
-
-## Initialzation

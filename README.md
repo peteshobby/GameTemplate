@@ -49,16 +49,20 @@ in.
 All the other systems have a real text overlay capability.
 
 ## Splash Screen
+
 The splash screen is shown once immediately after the game loads.
 
 Its purpose is to dispplay copyright and contact information and as a place to troubleshoot any
 installation issues.
 
 ## Attract Screen
-The attract screen is show after the splash screen and
-in between games. It show the instructions for playing the game.
+
+The attract screen is shown after the splash screen and
+in between games. It shows the instructions for playing the game.
 
 ## The Game Loop
+
+The game loop updates the screen and will read the players input.
 
 ## Configured Capabilities
 
