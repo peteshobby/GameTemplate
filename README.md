@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a template project for creating games to run on the following neo-retro systems:
+This is a template project for creating games to run on the following neo-retro platforms:
 
 * Agon Light 2
 * Aquarius+
@@ -10,6 +10,22 @@ This is a template project for creating games to run on the following neo-retro 
 * ZX Spectrum Next
 
 See [peteshobby.com](https://peteshobby.com) for more detailed information.
+
+## Building the template
+
+Each platform has its own make file.
+If you are using Visual Studio Code the project includes build task definitions so you can just press Ctrl-Shift-B and select the target you want to run.
+
+## SDKs
+
+The template expects the following SDKs to be installed:
+
+| Platform | SDK |
+| -------- | --- |
+| Agon Light | [AgDev](https://github.com/pcawte/AgDev)
+| Aquarius+ | [Aquarius+ SDK](https://github.com/fvdhoef/aquarius-plus) |
+| Commander X16 | [cc65](https://cc65.github.io/) |
+| ZX Spectrun Next | [z88dk](https://github.com/z88dk/z88dk/wiki) |
 
 ## Basic Game Structure
 
@@ -60,13 +76,13 @@ initialization issues.
 ## Attract Screen
 
 The attract screen is shown after the splash screen and
-in between games. It shows the instructions for playing the game.
+in between games. It shows the instructions for playing the game and waits for
+the player to start the game.
 
 ## The Game Loop
 
 The game loop:
 
-* Reads the player's input
 * Moves the tilemap
 * Updates the sprites
 * Updates the text overlay
