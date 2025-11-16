@@ -30,7 +30,7 @@ void SetupOverlay(void) {
 
 	DisplayText(0, 0, emptyLine, COLOR(WHITE, PURPLE));
 	DisplayText(1, 0, emptyLine, COLOR(WHITE, PURPLE));
-	DisplayCenteredText(0, "Text Overlay", COLOR(WHITE, PURPLE));
+	DisplayCenteredText(0, "Game Template", COLOR(WHITE, PURPLE));
 
 	DisplayText(SCREEN_HEIGHT - 1, 0, emptyLine, COLOR(WHITE, PURPLE));
 	DisplayText(SCREEN_HEIGHT - 2, 0, emptyLine, COLOR(WHITE, PURPLE));
