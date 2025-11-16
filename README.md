@@ -22,7 +22,7 @@ The template expects the following SDKs to be installed:
 
 | Platform | SDK |
 | -------- | --- |
-| Agon Light | [AgDev](https://github.com/pcawte/AgDev)
+| Agon Light | [AgDev](https://github.com/pcawte/AgDev) |
 | Aquarius+ | [Aquarius+ SDK](https://github.com/fvdhoef/aquarius-plus) |
 | Commander X16 | [cc65](https://cc65.github.io/) |
 | ZX Spectrun Next | [z88dk](https://github.com/z88dk/z88dk/wiki) |

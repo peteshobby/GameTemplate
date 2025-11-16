@@ -60,6 +60,7 @@ void ClearTextScreen(uint8_t backgroundColor) {
 
 // Set WR2 to specify B is a memory location that increments.
 		IO_DMA = D_WR2 | D_WR2_B_IS_MEM | D_WR2_B_INC;
+        
 // Set WR4 to specify that B has a 16 bit start address.
 // Continuious mode
 		IO_DMA = D_WR4 | D_WR4_CONT | D_WR4_X23_B_START;

@@ -24,8 +24,6 @@
 #include <arch/zxn.h>
 
 
-
-
 // Sets layer order to layer 2 on top, then sprites, then tilemap
 void SetLayerPriority(void) {
 	ZXN_NEXTREGA(REG_SPRITE_LAYER_SYSTEM, 

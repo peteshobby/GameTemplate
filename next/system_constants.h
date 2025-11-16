@@ -32,15 +32,15 @@
 #define GLOBAL_TRANSPARENT		0xC3
 
 // Tile Map
-#define START_OF_BANK_5		                0x4000
-#define TILEMAP_RAM	                        0x6000
-#define TILE_RAM		                    0x6A00	
-#define TILEDEF_SIZE                        32
-#define OFFSET_OF_MAP		                0x20 // ((START_OF_TILEMAP - START_OF_BANK_5) >> 8)
-#define OFFSET_OF_TILES		                0x2A // ((START_OF_TILES - START_OF_BANK_5) >> 8)
+#define START_OF_BANK_5		    0x4000
+#define TILEMAP_RAM	            0x6000
+#define TILE_RAM		        0x6A00	
+#define TILEDEF_SIZE            32
+#define OFFSET_OF_MAP		    0x20 // ((TILEMAP_RAM - START_OF_BANK_5) >> 8)
+#define OFFSET_OF_TILES		    0x2A // ((TILE_RAM - START_OF_BANK_5) >> 8)
 
-#define TILEMAP_WIDTH                       40
-#define TILEMAP_HEIGHT                      32
+#define TILEMAP_WIDTH           40
+#define TILEMAP_HEIGHT          32
 
 // Color
 #define COLOR(fore, back)       (((back << 4) | fore) & 0xFF) 
@@ -55,12 +55,17 @@
 #define SCREEN_WIDTH        	40
 #define SCREEN_HEIGHT       	32
 
-#define MIN_SPRITE_X		0
-#define MAX_SPRITE_X		(SCREEN_WIDTH * 8)
-#define MIN_SPRITE_Y		0
-#define MAX_SPRITE_Y		(SCREEN_HEIGHT * 8)
+#define MIN_SPRITE_X			0
+#define MAX_SPRITE_X			(SCREEN_WIDTH * 8)
+#define MIN_SPRITE_Y			0
+#define MAX_SPRITE_Y			(SCREEN_HEIGHT * 8)
 
 // Start message
-#define START_MESSAGE		"Press FIRE to play"
+#define START_MESSAGE			"Press FIRE to play"
+
+// ZX Spectrum Next additional register definitions
+#define TILEMAP_X_OFFSET_MSB	0x2F
+#define TILEMAP_X_OFFSET_LSB	0x30
+#define TILEMAP_Y_OFFSET		0x31
 
 #endif // SYSTEM_CONSTANTS_H_

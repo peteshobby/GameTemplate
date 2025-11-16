@@ -63,7 +63,7 @@ void InitializeTileSet(void) {
 }
 
 void InitializeMap(void) {
-      uint8_t *tileRam = (uint8_t *) TILE_RAM;
+    uint8_t *tileRam = (uint8_t *) TILE_RAM;
     uint8_t row;
     uint8_t column;
 
