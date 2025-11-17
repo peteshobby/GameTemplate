@@ -22,8 +22,6 @@
 #include "agon_init_images.h"
 #include "constants.h"
 #include "images.h"
-#include "large_image_data.h"
-#include "small_image_data.h"
 #include "vdp_functions.h"
 #include "agon_text_palette.h"
 
