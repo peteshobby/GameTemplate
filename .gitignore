@@ -1,0 +1,7 @@
+.vscode/settings.json
+build_agon/
+build_aqplus/
+build_cx16/
+build_next/
+next_banked/*.o
+
