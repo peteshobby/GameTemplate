@@ -10,7 +10,7 @@ $(OUT_NAME).nex:
 
 clean:  
 	@rm -rf build_next
-	@rm next_banked/*.o
+	@rm -f next_banked/*.o
 
 run_emu: $(OUT_NAME).nex
 	"C:\emulators\CSpect3_0_2_1\cspect.exe" -w4 -zxnext -nextrom build_next\\$(OUT_NAME).nex
