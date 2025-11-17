@@ -49,6 +49,8 @@ void GameLoop(void) {
 		FrameSync();
 		Show1616Sprite(1, TILE_EXAMPLE_IMAGE_3, GRID_AND_ENEMIES, false, false, x, y);
 		ScrollTilemap(++sx, sy);
+		if (sx == 16)
+			sx = 0;
 		UpdateOverlay();
 		x += dx;
 		y += dy;
