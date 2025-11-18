@@ -47,7 +47,7 @@ void GameLoop(void) {
 
 	while(1) {
 		FrameSync();
-		Show1616Sprite(1, TILE_EXAMPLE_IMAGE_3, GRID_AND_ENEMIES, false, false, x, y);
+		Show1616Sprite(1, TILE_EXAMPLE_IMAGE_3, GRAPHICS_PALETTE_1, false, false, x, y);
 		ScrollTilemap(++sx, sy);
 		if (sx == 16)
 			sx = 0;

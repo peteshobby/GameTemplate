@@ -27,8 +27,10 @@
 #include "aqplus_init_palette.h"
 #include "aqplus_init_tilemap.h"
 #include "constants.h"
+#include "frame_sync.h"
 #include "graphics.h"
 #include "text_color.h"
+#include "text_utilities.h"
 
 #include <aqplus.h>
 
@@ -40,14 +42,21 @@ void EnableTurboMode(void) {
     IO_SYSCTRL |= TURBO_MODE;
 }
 
+void ShowLoadingMessage(void) {
+	ClearTextScreen(BLACK);
+	DisplayCenteredText(SCREEN_HEIGHT / 2, "Loading ...",COLOR(CYAN, BLACK));
+	FrameSync();
+}
+
 void InitializeSystem() {
 	EnableTurboMode();
 	InitializeGraphics();
+	SetBorder(BLACK);
+	ShowLoadingMessage();
 	InitializePalette();
 	InitializeFont();
 	InitializeImages();
 	InitializeTilemap();
 
 	ClearTextScreen(BLACK);
-	SetBorder(BLACK);
 }

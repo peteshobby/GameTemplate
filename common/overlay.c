@@ -29,11 +29,14 @@ void SetupOverlay(void) {
 	//int row;
 
 	DisplayText(0, 0, emptyLine, COLOR(WHITE, PURPLE));
-	DisplayText(1, 0, emptyLine, COLOR(WHITE, PURPLE));
 	DisplayCenteredText(0, "Game Template", COLOR(WHITE, PURPLE));
 
-	DisplayText(SCREEN_HEIGHT - 1, 0, emptyLine, COLOR(WHITE, PURPLE));
+#ifndef AGON
+	DisplayText(1, 0, emptyLine, COLOR(WHITE, PURPLE));
 	DisplayText(SCREEN_HEIGHT - 2, 0, emptyLine, COLOR(WHITE, PURPLE));
+#endif // AGON
+
+	DisplayText(SCREEN_HEIGHT - 1, 0, emptyLine, COLOR(WHITE, PURPLE));
 
 	// for (row = 0; row <= SCREEN_HEIGHT - 1 ; ++row) {
 	// 	DisplayText(row, 0, "  ", COLOR(WHITE, PURPLE));

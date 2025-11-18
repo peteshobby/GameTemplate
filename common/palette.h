@@ -32,9 +32,9 @@ extern const uint8_t palettes[MAX_PALETTE][PALETTE_ENTRIES][PALETTE_BYTES];
 
 // Palette name constants.
 // TODO enum
-#define TEXT_PALETTE	0
-#define PLAYER_AND_SHOTS	1
-#define GRID_AND_ENEMIES	2
-#define MORE_ENEMIES	3
+#define TEXT_PALETTE			0
+#define GRAPHICS_PALETTE_1		1
+#define GRAPHICS_PALETTE_2		2
+#define GRAPHICS_PALETTE_3		3
 
 #endif // PALETTES_H_

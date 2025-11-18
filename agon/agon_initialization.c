@@ -25,6 +25,11 @@
 #include "agon_init_images.h"
 #include "agon_init_sprites.h"
 #include "agon_init_tilemap.h"
+#include "constants.h"
+#include "frame_sync.h"
+#include "graphics.h"
+#include "text_color.h"
+#include "text_utilities.h"
 
 #include <agon/vdp_vdu.h>
 #include <agon/vdp_key.h>
@@ -35,9 +40,18 @@ void InitializeAgon(void) {
 	vdp_key_init();
 }
 
+void ShowLoadingMessage(void) {
+	ClearTextScreen(0);
+	DisplayCenteredText(SCREEN_HEIGHT / 2, "Loading ...",COLOR(CYAN, BLACK));
+	FrameSync();
+	ClearTextScreen(0);
+	DisplayCenteredText(SCREEN_HEIGHT / 2, "Loading ...",COLOR(CYAN, BLACK));
+}
+
 void InitializeSystem(void) {
 	InitializeAgon();
 	InitializeGraphics();
+	ShowLoadingMessage();
 	InitializeFont();
 	InitializeImages();
 	InitializeSprites();
