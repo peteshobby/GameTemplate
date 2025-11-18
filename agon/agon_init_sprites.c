@@ -20,7 +20,7 @@
  */
 
 #include "agon_init_sprites.h"
-#include "agon_text_palette.h"
+
 
 #include "constants.h"
 #include "images.h"

@@ -232,3 +232,8 @@ void SwapScreen(void) {
     putch(0);
     putch(0xC3);
 }
+
+void OutputRawChar(char ch) {
+    putch(27);
+    putch(ch);
+}

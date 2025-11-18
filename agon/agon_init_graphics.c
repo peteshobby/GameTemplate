@@ -39,6 +39,4 @@ void InitializeGraphics(void) {
 // Turn off screen scaling.
 	vdp_logical_scr_dims(false);
 	EnableScrollProtection();
-	ClearTextScreen(0);
-
 }

@@ -21,7 +21,8 @@
 
 #include "constants.h"
 #include "text_utilities.h"
-#include "agon_text_palette.h"
+#include "palette.h"
+#include "vdp_functions.h"
 
 #include <agon/vdp_vdu.h>
 #include <string.h>
@@ -30,26 +31,26 @@
 
 
 void DisplayChar(uint8_t row, uint8_t column, char ch, uint8_t color) {
-	vdp_set_text_colour(agonTextPalette[color & 0x0F] & ALPHA_MASK);
-	vdp_set_text_colour(128 + (agonTextPalette[color >> 4] & ALPHA_MASK));
+	vdp_set_text_colour(palettes[TEXT_PALETTE][color & 0x0F][0]);
+	vdp_set_text_colour(128 + (palettes[TEXT_PALETTE][color >> 4][0]));
 	
 	//vdp_cursor_tab row and column are reversed from the function definition.
 	vdp_cursor_tab(column, row);
-	putch(ch);
+	OutputRawChar(ch);
 
     
 }
 
 
 void DisplayText(uint8_t row, uint8_t column, const char* text, uint8_t color) {
-	vdp_set_text_colour(agonTextPalette[color & 0x0F] & ALPHA_MASK);
-	vdp_set_text_colour(128 + (agonTextPalette[color >> 4] & ALPHA_MASK));
+	vdp_set_text_colour(palettes[TEXT_PALETTE][color & 0x0F][0]);
+	vdp_set_text_colour(128 + (palettes[TEXT_PALETTE][color >> 4][0]));
 	
 	//vdp_cursor_tab row and column are reversed from the function definition.
 	vdp_cursor_tab(column, row);
 
 	while(*text != 0)
-		putch(*text++);
+		OutputRawChar(*text++);
 }
 
 

@@ -23,7 +23,7 @@
 #include "constants.h"
 #include "images.h"
 #include "vdp_functions.h"
-#include "agon_text_palette.h"
+#include "palette.h"
 
 void ExpandImage(uint8_t *source, uint8_t *dest, uint8_t size) {
 	int srcIndex;
@@ -33,8 +33,8 @@ void ExpandImage(uint8_t *source, uint8_t *dest, uint8_t size) {
 		uint8_t left = source[srcIndex] >> 4;
 		uint8_t right = source[srcIndex] & 0x0F;
 
-		dest[dstIndex] = agonTextPalette[left];
-		dest[dstIndex + 1] = agonTextPalette[right];
+		dest[dstIndex] = palettes[GRAPHICS_PALETTE_2][left][0];
+		dest[dstIndex + 1] = palettes[GRAPHICS_PALETTE_2][right][0];
     }
 }
 

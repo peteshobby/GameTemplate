@@ -21,14 +21,14 @@
 
 #include "graphics.h"
 #include "frame_sync.h"
-#include "agon_text_palette.h"
+#include "palette.h"
 #include <agon/vdp_vdu.h>
 #include <stdbool.h>
 
 
 
 void ClearTextScreen(uint8_t backgroundColor) {
-	vdp_set_text_colour(agonTextPalette[backgroundColor] + 128);
+	vdp_set_text_colour(palettes[TEXT_PALETTE][backgroundColor][0] + 128);
 	vdp_clear_screen();
 }
 

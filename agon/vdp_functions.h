@@ -56,4 +56,6 @@ void EnableHardwareSprites(void);
 void EnableTilemap(void);
 void SwapScreen(void);
 
+void OutputRawChar(char ch);
+
 #endif // VDP_FUNCTIONS_H_
