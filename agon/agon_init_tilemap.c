@@ -66,16 +66,17 @@ void InitializeTileSet(void) {
     }
 }
 
-void SetTilemapSize(uint8_t size) {
+void InitializeTilemapMap(uint8_t mode) {
     putch(23);
     putch(0);
     putch(0xC2);
     putch(16);
     putch(0);
-    putch(size);
+    putch(mode);
     putch(0);
     putch(0);
 }
+
 
 void SetTile(uint8_t row, uint8_t column, uint8_t tileId, uint8_t attribute) {
     putch(23);
@@ -93,8 +94,6 @@ void InitializeMap(void) {
     uint8_t row;
     uint8_t column;
 
-    SetTilemapSize(3); // 64x32
-
     for (row = 0; row < TILEMAP_HEIGHT; ++row) {
         for (column = 0; column < TILEMAP_WIDTH; ++column) {
             uint8_t tileId = 1 + (row % 2) * 2 + (column % 2);
@@ -103,7 +102,7 @@ void InitializeMap(void) {
     }
 }
 
-void InitializeTileLayer(uint8_t layer) {
+void InitializeTilemapLayer(uint8_t layer) {
     putch(23);
     putch(0);
     putch(0xC2);
@@ -119,7 +118,8 @@ void InitializeTileLayer(uint8_t layer) {
 void InitializeTilemap(void) {
     EnableTilemap();
     InitializeTileSet();
+    InitializeTilemapMap(TILE_MAP_MODE_64x32);
+    InitializeTilemapLayer(TILE_LAYER_MODE_40x25);
     InitializeMap();
-    InitializeTileLayer(2);
     ScrollTilemap(0, 0);
 }

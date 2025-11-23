@@ -63,12 +63,5 @@ void ShowAttractScreen(void) {
 	ShowInformation();
 	FrameSync();
 
-// Draw it again for double buffered systems.
-#ifdef DBLBUF
-	ClearTextScreen(BLACK);
-	ShowInformation();
-	FrameSync();
-#endif // DBLBUF
-
 	WaitForAttractInput();
 }

@@ -24,28 +24,33 @@
 #include "text_color.h"
 #include "text_utilities.h"
 
-const char *emptyLine = "                                        ";
-void SetupOverlay(void) {
-	//int row;
-
-	DisplayText(0, 0, emptyLine, COLOR(WHITE, PURPLE));
-	DisplayCenteredText(0, "Game Template", COLOR(WHITE, PURPLE));
-
-#ifndef AGON
-	DisplayText(1, 0, emptyLine, COLOR(WHITE, PURPLE));
-	DisplayText(SCREEN_HEIGHT - 2, 0, emptyLine, COLOR(WHITE, PURPLE));
+#ifdef AGON
+#define OVERLAY_LINE_0	(SCREEN_HEIGHT - 4)
+#define OVERLAY_LINE_1 (OVERLAY_LINE_0 + 1)
+#define OVERLAY_LINE_2 (OVERLAY_LINE_1 + 1)
+#define OVERLAY_LINE_3 (OVERLAY_LINE_2 + 1)
+#else
+#define OVERLAY_LINE_0	0
+#define OVERLAY_LINE_1 (OVERLAY_LINE_0 + 1)
+#define OVERLAY_LINE_2 (SCREEN_HEIGHT - 2)
+#define OVERLAY_LINE_3 (SCREEN_HEIGHT - 1)
 #endif // AGON
 
-	DisplayText(SCREEN_HEIGHT - 1, 0, emptyLine, COLOR(WHITE, PURPLE));
+const char *emptyLine = "                                        ";
+void SetupOverlay(void) {
 
-	// for (row = 0; row <= SCREEN_HEIGHT - 1 ; ++row) {
-	// 	DisplayText(row, 0, "  ", COLOR(WHITE, PURPLE));
-	// 	DisplayText(row, SCREEN_WIDTH - 2, "  ", COLOR(WHITE, PURPLE));
-	// }
+	DisplayText(OVERLAY_LINE_0, 0, emptyLine, COLOR(WHITE, PURPLE));
+	DisplayCenteredText(OVERLAY_LINE_0, "Game Template", COLOR(WHITE, PURPLE));
+	DisplayText(OVERLAY_LINE_1, 0, emptyLine, COLOR(WHITE, PURPLE));
+	
+	DisplayText(OVERLAY_LINE_2, 0, emptyLine, COLOR(WHITE, PURPLE));
+	DisplayText(OVERLAY_LINE_3, 0, emptyLine, COLOR(WHITE, PURPLE));
+
+#ifdef AGON
+	DisplayText(OVERLAY_LINE_0 - 1, 0, emptyLine, COLOR(WHITE, PURPLE));
+#endif // AGON
+
 }
 
 void UpdateOverlay(void) {
-#ifdef DBLBUF
-	SetupOverlay();
-#endif // DBLBUF
 }

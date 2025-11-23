@@ -41,12 +41,12 @@
 
 // Screen info
 #define SCREEN_WIDTH        40
-#define SCREEN_HEIGHT       25
+#define SCREEN_HEIGHT       30
 
 #define MIN_SPRITE_X		0
 #define MAX_SPRITE_X		(SCREEN_WIDTH * 8)
-#define MIN_SPRITE_Y		8
-#define MAX_SPRITE_Y		((SCREEN_HEIGHT - 1) * 8)
+#define MIN_SPRITE_Y		0
+#define MAX_SPRITE_Y		((SCREEN_HEIGHT - 5) * 8)
 
 // Screen modes
 #define MODE_320_240_64		8
@@ -55,5 +55,12 @@
 
 // Start message
 #define START_MESSAGE		"Press FIRE to play"
+
+// Agon Light additional system definitions
+
+#define TILE_MAP_MODE_32x32		0
+#define TILE_MAP_MODE_64x32		3
+
+#define TILE_LAYER_MODE_40x25	3
 
 #endif // SYSTEM_CONSTANTS_H_

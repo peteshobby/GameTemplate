@@ -55,11 +55,10 @@ Both sprite and tile graphic data are defined in the same array and copied to th
 
 The template uses a text overlay for showing the score and other information.
 
-The Agon Light does not currently have the capability to provide a real text overlay so it has to be redrawn on every refresh. This is a relatively slow process. To mitigate this the text overlay is limited to as few lines as possible and the template uses the Agon's
-double buffered screen mode to hide frame drops.
+The Agon Light does not currently have the capability to provide a real text overlay. However the tilemap can be configured to only cover the top 200 lines of a 240
+line screen.
 
-Even with this games will run noticably slower on the
-Agon compared to the other systems.
+Even with this games will run noticably slower on the Agon compared to the other systems.
 Also because it is not a real overlay sprites will always appear above it.
 The template hides this by limiting the area of the screen the sprites appear
 in.

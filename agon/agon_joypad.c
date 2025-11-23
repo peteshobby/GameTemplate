@@ -20,6 +20,10 @@
  */
 
 #include "joypad.h"
+#include "agon_joypad_utilities.h"
+#include "text_color.h"
+#include "text_utilities.h"
+
 #include <agon/vdp_vdu.h>
 #include <agon/vdp_key.h>
 
@@ -35,67 +39,36 @@
 #define JOY_A       0b0000000000100000
 #define JOY_B       0b0000000010000000
 
-#define PC_DR       0x9E
-#define PC_DDR      0x9F
-#define PD_DR       0xA2
-#define PD_DDR      0xA3
-
-uint8_t ReadPort(uint8_t port) {
-    uint8_t output;
-    __asm__ volatile (
-        "ld b, 0 \n"
-        "ld c, %1 \n"
-        "in a, (c) \n"
-        "ld %0, a"
-        : "=r"(output)
-        : "r"(port)
-        : "cc", "memory", "b", "c", "a"
-    );
-    return output;
-}
-
-void WritePort(uint8_t port, uint8_t value) {
-    __asm__ volatile (
-        "ld b, 0 \n"
-        "ld a, %1 \n"
-        "ld c, %0 \n"
-        "out (c), a"
-        :
-        : "r"(port), "r"(value)
-        : "cc", "memory", "b", "c", "a"
-    );
-}
-
 uint16_t ReadJoystick1() {
-    WritePort(PC_DDR, 0xFF);
-	unsigned char temp = ReadPort(PD_DDR);
-	WritePort(PD_DDR, temp | 0xF0);
-
-	unsigned char fire = ReadPort(PD_DR);
-	unsigned char direction = ReadPort(PC_DR);
+    SetJoyPorts();
+    uint8_t direction = ReadDirection();
+    uint8_t fire  = ReadFire();
     
     return (direction << 8) | fire;
 }
 
 uint16_t ReadJoystick2() {
-    WritePort(PC_DDR, 0xFF);
-	unsigned char temp = ReadPort(PD_DDR);
-	WritePort(PD_DDR, temp | 0xF0);
-
-	unsigned char fire = ReadPort(PD_DR);
-	unsigned char direction = ReadPort(PC_DR);
+    SetJoyPorts();
+    uint8_t direction = ReadDirection();
+    uint8_t fire  = ReadFire();
+    uint16_t result =  direction << 8 | fire;
 
 // Shift the return value one to the left to match the same
 // bit masks as the first joystick.
-    return ((direction << 8) | fire) << 1;
+
+    return result << 1;
 }
 
 uint16_t GetRightJoypadState(void) {
-    return (~ReadJoystick1()) & 0xFFF0;
+    return ~ReadJoystick1() & 0xFFF0;
 }
 
 uint16_t GetLeftJoypadState(void) {
-    return (~ReadJoystick2()) & 0xFFF0;
+    return ~ReadJoystick2() & 0xFFF0;
+}
+
+uint16_t GetDefaultJoypadState(void) {
+    return GetRightJoypadState();
 }
 
 uint8_t GetJoypad4WayDirection(uint16_t state) {
@@ -153,7 +126,6 @@ uint8_t GetJoypadButtons(uint16_t state) {
     if(state & JOY_B)
         result |= JOY_B1;
 
-    result = JOY_B0;
     return result;
 }
 

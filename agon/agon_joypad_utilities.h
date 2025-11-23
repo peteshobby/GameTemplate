@@ -15,15 +15,18 @@
  */
 
 /**
- * @file  agon_frame_sync.c
- * @brief Agon Light wait for the next vertical sync.
+ * @file  agon_joypad_utilities.h
+ * @brief Agon Light joypad utility functions.
  */
 
-#include "frame_sync.h"
-#include <agon/vdp_vdu.h>
 
-// Wait for the vertical refresh
-// Swap the display buffers if double buffered
-void FrameSync(void) {
-	waitvblank();
-}
+#ifndef AGON_JOYPAD_UTILITIES_H_
+#define AGON_JOYPAD_UTILITIES_H_
+
+#include <stdint.h>
+
+void SetJoyPorts(void);
+uint8_t ReadDirection(void);
+uint8_t ReadFire(void);
+
+#endif // AGON_JOYPAD_UTILITIES_H_

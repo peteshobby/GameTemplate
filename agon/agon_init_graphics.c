@@ -31,7 +31,7 @@
 #include <stdbool.h>
 
 void InitializeGraphics(void) {
-	vdp_mode(MODE_320_200_64 + DOUBLE_BUFFER);
+	vdp_mode(MODE_320_240_64);
 	
 // Hide cursor
 	vdp_cursor_enable( false );

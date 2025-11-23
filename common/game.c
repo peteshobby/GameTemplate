@@ -40,10 +40,6 @@ void GameLoop(void) {
 	int16_t sx = 0;
 	int16_t sy = 0;
 	SetupOverlay();
-#ifdef DBLBUF
-	FrameSync();
-	SetupOverlay();
-#endif // DBLBUF
 
 	while(1) {
 		FrameSync();
@@ -69,10 +65,6 @@ void GameLoop(void) {
 
 void PlayGame(void) {
 	ClearTextScreen(TRANSPARENT);
-#ifdef DBLBUF
-	FrameSync();
-	ClearTextScreen(TRANSPARENT);
-#endif // DBLBUF
 
 	GameLoop();
  }

@@ -43,7 +43,7 @@ void UpdateAndDrawLayer(void) {
 void ScrollTilemap(int16_t x, int16_t y) {
 	uint8_t xpos = x >> 3;
 	uint8_t xoffset = x & 7;
-	uint8_t ypos = y >> 3;
+	uint8_t ypos = (y & 0xFF) >> 3;
 	uint8_t yoffset = y & 7;
   
 	putch(23);
